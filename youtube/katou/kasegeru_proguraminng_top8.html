@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>1000万円以上稼げる最強プログラミング言語 TOP8【2025年版】 - 加藤先生</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+      min-height: 100vh;
+      color: #333;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    header {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 30px;
+      margin-bottom: 30px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    }
+
+    .back-link {
+      display: inline-block;
+      background: linear-gradient(45deg, #e74c3c, #c0392b);
+      color: white;
+      padding: 10px 20px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: 600;
+      margin-bottom: 20px;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);
+    }
+
+    .back-link:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(231, 76, 60, 0.4);
+    }
+
+    h1 {
+      color: #2c3e50;
+      font-size: 2.2rem;
+      margin-bottom: 10px;
+      background: linear-gradient(45deg, #e74c3c, #c0392b);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .author-info {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+
+    .author-badge {
+      background: linear-gradient(45deg, #e74c3c, #c0392b);
+      color: white;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+
+    .video-section {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 30px;
+      margin-bottom: 30px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    }
+
+    .video-container {
+      position: relative;
+      width: 100%;
+      height: 0;
+      padding-bottom: 56.25%;
+      margin-bottom: 30px;
+    }
+
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 15px;
+    }
+
+    .points-section {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 30px;
+      margin-bottom: 30px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    }
+
+    .points-title {
+      font-size: 1.5rem;
+      color: #2c3e50;
+      margin-bottom: 20px;
+      border-bottom: 3px solid #e74c3c;
+      padding-bottom: 10px;
+    }
+
+    .points-list {
+      list-style: none;
+    }
+
+    .points-list li {
+      background: linear-gradient(45deg, #e74c3c, #c0392b);
+      color: white;
+      padding: 15px 20px;
+      margin-bottom: 15px;
+      border-radius: 10px;
+      font-weight: 500;
+      box-shadow: 0 4px 15px rgba(231, 76, 60, 0.2);
+    }
+
+    .transcript-section {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 30px;
+      margin-bottom: 30px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    }
+
+    .transcript-title {
+      font-size: 1.5rem;
+      color: #2c3e50;
+      margin-bottom: 20px;
+      border-bottom: 3px solid #e74c3c;
+      padding-bottom: 10px;
+    }
+
+    .transcript-content {
+      background: #f8f9fa;
+      padding: 25px;
+      border-radius: 15px;
+      line-height: 1.8;
+      color: #2c3e50;
+      max-height: 400px;
+      overflow-y: auto;
+    }
+
+    .related-videos {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 30px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    }
+
+    .related-title {
+      font-size: 1.5rem;
+      color: #2c3e50;
+      margin-bottom: 20px;
+      border-bottom: 3px solid #e74c3c;
+      padding-bottom: 10px;
+    }
+
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
+
+    .related-card {
+      background: white;
+      border-radius: 15px;
+      padding: 20px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+      border: 1px solid #e0e0e0;
+    }
+
+    .related-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    .related-card h3 {
+      color: #2c3e50;
+      margin-bottom: 10px;
+      font-size: 1.1rem;
+    }
+
+    .related-card a {
+      color: #e74c3c;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+
+    .related-card a:hover {
+      color: #c0392b;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        padding: 15px;
+      }
+
+      h1 {
+        font-size: 1.8rem;
+      }
+
+      .related-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <a href="../index.html" class="back-link">← 加藤先生の動画一覧に戻る</a>
+      <h1>1000万円以上稼げる最強プログラミング言語 TOP8【2025年版】</h1>
+      <div class="author-info">
+        <span class="author-badge">加藤先生</span>
+        <span style="color: #7f8c8d;">プログラミング講師</span>
+      </div>
+    </header>
+
+    <div class="video-section">
+      <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/8iGoCr4VgRc?si=sb22kfSGJsuVqZZu" title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+    </div>
+
+    <div class="points-section">
+      <h2 class="points-title">🎯 この動画のポイント</h2>
+      <ul class="points-list">
+        <li>2025年に向けて最も稼げるプログラミング言語TOP8を徹底解説</li>
+        <li>各言語の年収相場と需要動向を詳しく分析</li>
+        <li>初心者でも始めやすい言語から上級者向けまで幅広く紹介</li>
+        <li>実際の案件単価と市場価値をリアルな数字で解説</li>
+        <li>学習の優先順位とキャリア戦略を提案</li>
+      </ul>
+    </div>
+
+    <div class="transcript-section">
+      <h2 class="transcript-title">📝 動画の文字起こし</h2>
+      <div class="transcript-content">
+        <p><strong>加藤先生：</strong>こんにちは、プログラミング講師の加藤です。今日は2025年に向けて、1000万円以上稼げる最強のプログラミング言語TOP8についてお話しします。</p>
+
+        <p>まず最初に、なぜプログラミング言語の選択が重要なのかについて説明します。同じスキルレベルでも、言語によって年収が大きく変わってくるんです。</p>
+
+        <p><strong>第8位：Python</strong><br>
+          年収相場：600万円〜1200万円<br>
+          AI・機械学習分野で圧倒的な需要があり、初心者にも優しい言語です。データサイエンスやWeb開発でも活躍できます。</p>
+
+        <p><strong>第7位：JavaScript</strong><br>
+          年収相場：500万円〜1000万円<br>
+          Web開発の必須言語で、フロントエンドからバックエンドまで幅広く使えます。React、Vue.jsなどのフレームワークも人気です。</p>
+
+        <p><strong>第6位：Java</strong><br>
+          年収相場：600万円〜1300万円<br>
+          大企業のシステム開発で重宝され、Androidアプリ開発でも使われます。安定した需要があります。</p>
+
+        <p><strong>第5位：C#</strong><br>
+          年収相場：700万円〜1400万円<br>
+          Microsoft系の開発で高単価案件が多く、ゲーム開発（Unity）でも活躍できます。</p>
+
+        <p><strong>第4位：Go</strong><br>
+          年収相場：800万円〜1500万円<br>
+          クラウド・マイクロサービス分野で急成長中。Googleが開発した言語で、パフォーマンスが優秀です。</p>
+
+        <p><strong>第3位：Rust</strong><br>
+          年収相場：900万円〜1600万円<br>
+          システムプログラミングで注目を集め、安全性とパフォーマンスを両立。学習コストは高いですが、高単価案件が多いです。</p>
+
+        <p><strong>第2位：Scala</strong><br>
+          年収相場：1000万円〜1800万円<br>
+          関数型プログラミング言語で、金融・FinTech分野で高評価。経験者には非常に高単価の案件があります。</p>
+
+        <p><strong>第1位：Kotlin</strong><br>
+          年収相場：1200万円〜2000万円<br>
+          Android開発の主流言語となり、サーバーサイド開発でも活躍。Googleが公式サポートしており、需要が急増しています。</p>
+
+        <p>重要なのは、単に言語を学ぶだけでなく、その言語が使われる分野の知識も身につけることです。例えば、KotlinならAndroid開発の知識、Rustならシステムプログラミングの理解が必要です。</p>
+
+        <p>初心者の方は、まずJavaScriptやPythonから始めて、徐々に専門性の高い言語に移行することをお勧めします。焦らずに段階的にスキルアップしていきましょう。</p>
+
+        <p>次回は、これらの言語の具体的な学習方法について詳しく解説します。お楽しみに！</p>
+      </div>
+    </div>
+
+    <div class="related-videos">
+      <h2 class="related-title">📚 関連動画</h2>
+      <div class="related-grid">
+        <div class="related-card">
+          <h3>今から始めるべき最強プログラミング言語【2025年版】</h3>
+          <a href="saikyou.proguraminng.html">詳細を見る →</a>
+        </div>
+        <div class="related-card">
+          <h3>在宅で稼げる最強プログラミング言語ランキング【2025年版】</h3>
+          <a href="zaitaku_kasegeru.proguraminng.html">詳細を見る →</a>
+        </div>
+        <div class="related-card">
+          <h3>【前編】将来性がある人気の最強プログラミング言語TOP5【2025年版】</h3>
+          <a href="syouraisei_proguraming_zenpen.html">詳細を見る →</a>
+        </div>
+        <div class="related-card">
+          <h3>【後編】将来性がある人気の最強プログラミング言語TOP5【2025年版】</h3>
+          <a href="syouraisei_proguraming_kouhen.html">詳細を見る →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

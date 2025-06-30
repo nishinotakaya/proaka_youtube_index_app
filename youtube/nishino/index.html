@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>西野動画集 - プロアカYouTube紹介</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #9b59b6 0%, #8e44ad 100%);
+      min-height: 100vh;
+      color: #333;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    header {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 30px;
+      margin-bottom: 30px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-bottom: 20px;
+      color: #8e44ad;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 8px 16px;
+      border: 2px solid #8e44ad;
+      border-radius: 20px;
+      transition: all 0.3s ease;
+    }
+
+    .back-link:hover {
+      background: #8e44ad;
+      color: white;
+    }
+
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+      background: linear-gradient(45deg, #9b59b6, #8e44ad);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .subtitle {
+      text-align: center;
+      color: #7f8c8d;
+      font-size: 1.1rem;
+      margin-bottom: 20px;
+    }
+
+    .instructor-info {
+      text-align: center;
+      background: linear-gradient(45deg, #9b59b6, #8e44ad);
+      color: white;
+      padding: 20px;
+      border-radius: 15px;
+      margin-bottom: 30px;
+    }
+
+    .instructor-name {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .instructor-description {
+      font-size: 1rem;
+      opacity: 0.9;
+    }
+
+    .videos-section {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 30px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    }
+
+    .section-title {
+      font-size: 1.8rem;
+      color: #2c3e50;
+      margin-bottom: 30px;
+      text-align: center;
+      border-bottom: 3px solid #9b59b6;
+      padding-bottom: 10px;
+    }
+
+    .videos-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 25px;
+    }
+
+    .video-card {
+      background: white;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+      border: 1px solid #e0e0e0;
+    }
+
+    .video-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    }
+
+    .video-thumbnail {
+      width: 100%;
+      height: 200px;
+      background: #f0f0f0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .video-thumbnail iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .video-info {
+      padding: 20px;
+    }
+
+    .video-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #2c3e50;
+      margin-bottom: 10px;
+      line-height: 1.4;
+      text-decoration: none;
+      display: block;
+    }
+
+    .video-title:hover {
+      color: #9b59b6;
+    }
+
+    .video-description {
+      color: #7f8c8d;
+      font-size: 0.9rem;
+      margin-bottom: 15px;
+      line-height: 1.5;
+    }
+
+    .video-link {
+      display: inline-block;
+      background: linear-gradient(45deg, #9b59b6, #8e44ad);
+      color: white;
+      padding: 8px 16px;
+      border-radius: 20px;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+
+    .video-link:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 15px rgba(155, 89, 182, 0.3);
+    }
+
+    @media (max-width: 768px) {
+      .videos-grid {
+        grid-template-columns: 1fr;
+      }
+
+      h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <a href="../../top.html" class="back-link">← トップページに戻る</a>
+      <h1>🎬 西野動画集</h1>
+      <p class="subtitle">元介護士から現役エンジニアへの転身体験談</p>
+    </header>
+    <div class="instructor-info">
+      <div class="instructor-name">西野先生</div>
+      <div class="instructor-description">
+        元介護士から現役エンジニアへの転身を実現。<br>
+        未経験からの転職成功体験と実践的なアドバイスを提供。
+      </div>
+    </div>
+    <div class="videos-section">
+      <h2 class="section-title">📚 西野先生のおすすめ動画</h2>
+      <div class="videos-grid">
+        <div class="video-card">
+          <div class="video-thumbnail">
+            <iframe src="https://www.youtube.com/embed/FfivKeebTBI?si=pnfHqc_U-6MYQyx2" title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+          <div class="video-info">
+            <a href="tensyoku_programing.html" class="video-title">
+              転職したいならプログラミングをやれ！【元介護士の現役エンジニア西野が語る】
+            </a>
+            <div class="video-description">元介護士としての経験を活かし、プログラミング学習による転職成功の秘訣を詳しく解説。</div>
+            <a href="tensyoku_programing.html" class="video-link">詳細を見る</a>
+          </div>
+        </div>
+        <div class="video-card">
+          <div class="video-thumbnail">
+            <iframe src="https://www.youtube.com/embed/475ly5zU7ng?si=Y0dYHcq0S3h0xtEo" title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+          <div class="video-info">
+            <a href="kaigoshi_yametoke.html" class="video-title">
+              【元介護士の現役エンジニア西野が語る】 介護士だけは絶対にやめとけ！プログラミングにしとけ
+            </a>
+            <div class="video-description">介護士として働いていた経験から、プログラミングへの転身を強く推奨する理由を語る。</div>
+            <a href="kaigoshi_yametoke.html" class="video-link">詳細を見る</a>
+          </div>
+        </div>
+        <div class="video-card">
+          <div class="video-thumbnail">
+            <iframe src="https://www.youtube.com/embed/peUZvVONcas?si=uQq8JKfeNg__XTw1" title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+          <div class="video-info">
+            <a href="naze_hantoshide_kasegeru_programing.html" class="video-title">
+              なぜプログラミングを学習すれば半年で簡単に稼げるリモートワーカーになれるのか？
+            </a>
+            <div class="video-description">半年でリモートワーカーになれる理由と、具体的な学習方法を実体験に基づいて解説。</div>
+            <a href="naze_hantoshide_kasegeru_programing.html" class="video-link">詳細を見る</a>
+          </div>
+        </div>
+        <div class="video-card">
+          <div class="video-thumbnail">
+            <iframe src="https://www.youtube.com/embed/Ug4R6j7kHH0?si=IyqgaSLXkXn6QlWc" title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+          <div class="video-info">
+            <a href="yaritaikoto_byousoku.html" class="video-title">
+              【97%驚愕】プログラミング思考で"やりたい"を秒速発見
+            </a>
+            <div class="video-description">プログラミング学習を通じて身につく思考法で、自分のやりたいことを見つける方法を紹介。</div>
+            <a href="yaritaikoto_byousoku.html" class="video-link">詳細を見る</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

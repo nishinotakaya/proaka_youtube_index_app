@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>【2025年】最も需要が高いWebアプリ開発案件【プログラミング言語】 - 小松先生</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+      min-height: 100vh;
+      color: #333;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    header {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 30px;
+      margin-bottom: 30px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-bottom: 20px;
+      color: #2980b9;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 8px 16px;
+      border: 2px solid #2980b9;
+      border-radius: 20px;
+      transition: all 0.3s ease;
+    }
+
+    .back-link:hover {
+      background: #2980b9;
+      color: white;
+    }
+
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+      font-size: 2.2rem;
+      margin-bottom: 15px;
+      line-height: 1.3;
+    }
+
+    .video-meta {
+      text-align: center;
+      color: #7f8c8d;
+      font-size: 1rem;
+      margin-bottom: 20px;
+    }
+
+    .instructor-badge {
+      display: inline-block;
+      background: linear-gradient(45deg, #3498db, #2980b9);
+      color: white;
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-left: 10px;
+    }
+
+    .video-section {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 30px;
+      margin-bottom: 30px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    }
+
+    .video-container {
+      position: relative;
+      width: 100%;
+      max-width: 800px;
+      margin: 0 auto;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .video-container iframe {
+      width: 100%;
+      height: 450px;
+      border: none;
+    }
+
+    .transcript-section {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 30px;
+      margin-bottom: 30px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    }
+
+    .section-title {
+      font-size: 1.8rem;
+      color: #2c3e50;
+      margin-bottom: 20px;
+      text-align: center;
+      border-bottom: 3px solid #3498db;
+      padding-bottom: 10px;
+    }
+
+    .transcript-content {
+      background: #f8f9fa;
+      border-radius: 15px;
+      padding: 25px;
+      line-height: 1.8;
+      font-size: 1rem;
+      color: #2c3e50;
+    }
+
+    .transcript-content h3 {
+      color: #3498db;
+      margin: 20px 0 10px 0;
+      font-size: 1.3rem;
+    }
+
+    .transcript-content p {
+      margin-bottom: 15px;
+    }
+
+    .transcript-content ul {
+      margin: 15px 0;
+      padding-left: 20px;
+    }
+
+    .transcript-content li {
+      margin-bottom: 8px;
+    }
+
+    .key-points {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 30px;
+      margin-bottom: 30px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    }
+
+    .key-points-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .key-point-card {
+      background: linear-gradient(135deg, #3498db, #2980b9);
+      color: white;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+    }
+
+    .key-point-card h4 {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+      border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+      padding-bottom: 8px;
+    }
+
+    .related-videos {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 30px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    }
+
+    .related-videos-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .related-video-card {
+      background: white;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    .related-video-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    .related-video-thumbnail {
+      width: 100%;
+      height: 150px;
+      background: #f0f0f0;
+    }
+
+    .related-video-thumbnail iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .related-video-info {
+      padding: 15px;
+    }
+
+    .related-video-title {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #2c3e50;
+      text-decoration: none;
+      display: block;
+      margin-bottom: 8px;
+      line-height: 1.4;
+    }
+
+    .related-video-title:hover {
+      color: #3498db;
+    }
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 1.8rem;
+      }
+
+      .video-container iframe {
+        height: 250px;
+      }
+
+      .key-points-grid,
+      .related-videos-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <a href="../komatsu/index.html" class="back-link">← 小松動画集に戻る</a>
+      <h1>【2025年】最も需要が高いWebアプリ開発案件【プログラミング言語】</h1>
+      <div class="video-meta">
+        講師: 小松先生 <span class="instructor-badge">小松</span>
+      </div>
+    </header>
+
+    <div class="video-section">
+      <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/mGZRa43mEKk?si=AsWiUejrubWj22oR" title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+    </div>
+
+    <div class="key-points">
+      <h2 class="section-title">🎯 この動画のポイント</h2>
+      <div class="key-points-grid">
+        <div class="key-point-card">
+          <h4>Webアプリ開発の需要</h4>
+          <p>2025年に最も需要が高いWebアプリ開発案件と、その案件で使われるプログラミング言語を徹底解説</p>
+        </div>
+        <div class="key-point-card">
+          <h4>実務経験に基づく解説</h4>
+          <p>現役エンジニアとしての実務経験を活かし、実際の案件で求められるスキルを詳しく紹介</p>
+        </div>
+        <div class="key-point-card">
+          <h4>キャリア形成のアドバイス</h4>
+          <p>Webアプリ開発者としてのキャリアパスと、高収入を得るための具体的な戦略を提案</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="transcript-section">
+      <h2 class="section-title">📝 動画内容の文字起こし</h2>
+      <div class="transcript-content">
+        <h3>【序章】Webアプリ開発の現状と将来性</h3>
+        <p>こんにちは、小松です。今日は2025年に最も需要が高いWebアプリ開発案件について、実際の現場で使われている技術スタックと合わせてお話しします。</p>
+
+        <p>Webアプリ開発は、リモートワークの普及により、ますます需要が高まっています。特に、SaaS（Software as a Service）系のアプリケーション開発案件が急増しています。</p>
+
+        <h3>【第1位】React + TypeScript案件</h3>
+        <p>最も需要が高いのは、React + TypeScriptの組み合わせです。大企業からスタートアップまで、幅広く採用されています。</p>
+        <ul>
+          <li>フロントエンド開発の主流技術</li>
+          <li>型安全性による開発効率の向上</li>
+          <li>豊富なライブラリとエコシステム</li>
+          <li>年収相場：500万円〜900万円</li>
+        </ul>
+
+        <h3>【第2位】Next.js + Node.js案件</h3>
+        <p>第2位はNext.js + Node.jsの組み合わせです。フルスタック開発で人気が高く、特にスタートアップで重宝されています。</p>
+        <ul>
+          <li>サーバーサイドレンダリング（SSR）対応</li>
+          <li>SEOに有利な構造</li>
+          <li>開発からデプロイまで一貫した環境</li>
+          <li>年収相場：450万円〜800万円</li>
+        </ul>
+
+        <h3>【第3位】Vue.js + Laravel案件</h3>
+        <p>第3位はVue.js + Laravelの組み合わせです。日本企業での採用が多く、安定した案件が豊富です。</p>
+        <ul>
+          <li>学習コストが比較的低い</li>
+          <li>日本語のドキュメントが充実</li>
+          <li>中小企業での採用が多い</li>
+          <li>年収相場：400万円〜700万円</li>
+        </ul>
+
+        <h3>【実務で求められるスキル】</h3>
+        <p>Webアプリ開発者として成功するには、以下のスキルが重要です：</p>
+        <ul>
+          <li>HTML/CSS/JavaScriptの基礎知識</li>
+          <li>フレームワーク（React、Vue.js、Angular）の習熟</li>
+          <li>バックエンド技術（Node.js、PHP、Python）</li>
+          <li>データベース（MySQL、PostgreSQL、MongoDB）</li>
+          <li>クラウドサービス（AWS、GCP、Azure）</li>
+          <li>Git/GitHubでのバージョン管理</li>
+        </ul>
+
+        <h3>【まとめ】学習の優先順位</h3>
+        <p>初心者の方は、まずHTML/CSS/JavaScriptの基礎を固めてから、Reactを学ぶことをお勧めします。その後、TypeScriptやNext.jsを習得することで、高単価の案件に応募できるようになります。
+        </p>
+
+        <p>重要なのは、実際にプロジェクトを作ってポートフォリオを充実させることです。理論だけでなく、実践的なスキルが求められる業界です。</p>
+      </div>
+    </div>
+
+    <div class="related-videos">
+      <h2 class="section-title">📚 関連動画</h2>
+      <div class="related-videos-grid">
+        <div class="related-video-card">
+          <div class="related-video-thumbnail">
+            <iframe src="https://www.youtube.com/embed/ief17KqCDQs?si=QFx9eeSepUTTyFOO" title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+          <div class="related-video-info">
+            <a href="kousyounyuu_teisyuunyuu_programing.html" class="related-video-title">
+              プログラミング習得者の高収入と低収入の違い5選
+            </a>
+          </div>
+        </div>
+
+        <div class="related-video-card">
+          <div class="related-video-thumbnail">
+            <iframe src="https://www.youtube.com/embed/iKiqL-Kur4o?si=2dKovTEG0YPiHWiD" title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+          <div class="related-video-info">
+            <a href="2025_programing_load_map.html" class="related-video-title">
+              【2025年最新版】プログラミング未経験からAI活用で最短最速でプログラマになるロードマップ
+            </a>
+          </div>
+        </div>
+
+        <div class="related-video-card">
+          <div class="related-video-thumbnail">
+            <iframe src="https://www.youtube.com/embed/l3Nwo0pzFFQ?si=nIBeqKjzb2q8nEW3" title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+          <div class="related-video-info">
+            <a href="2025_programing_load_map.html" class="related-video-title">
+              最短最速でプログラミングを習得する７ステップ
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

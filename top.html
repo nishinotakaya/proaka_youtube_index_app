@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>プロアカYouTube紹介 - プログラミング学習動画</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      color: #333;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    header {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 30px;
+      margin-bottom: 30px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+      background: linear-gradient(45deg, #667eea, #764ba2);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .subtitle {
+      text-align: center;
+      color: #7f8c8d;
+      font-size: 1.1rem;
+      margin-bottom: 30px;
+    }
+
+    nav ul {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #2c3e50;
+      font-weight: 600;
+      padding: 12px 24px;
+      border-radius: 25px;
+      background: linear-gradient(45deg, #667eea, #764ba2);
+      color: white;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+    }
+
+    nav a:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+    }
+
+    .playlist-section {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 30px;
+      margin-bottom: 30px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    }
+
+    .playlist-title {
+      font-size: 1.8rem;
+      color: #2c3e50;
+      margin-bottom: 20px;
+      text-align: center;
+      border-bottom: 3px solid #667eea;
+      padding-bottom: 10px;
+    }
+
+    .videos-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 25px;
+      margin-top: 30px;
+    }
+
+    .video-card {
+      background: white;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+      border: 1px solid #e0e0e0;
+    }
+
+    .video-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    }
+
+    .video-thumbnail {
+      width: 100%;
+      height: 200px;
+      background: #f0f0f0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .video-thumbnail iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .video-info {
+      padding: 20px;
+    }
+
+    .video-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #2c3e50;
+      margin-bottom: 10px;
+      line-height: 1.4;
+      text-decoration: none;
+      display: block;
+    }
+
+    .video-title:hover {
+      color: #667eea;
+    }
+
+    .video-author {
+      color: #7f8c8d;
+      font-size: 0.9rem;
+      margin-bottom: 15px;
+    }
+
+    .video-link {
+      display: inline-block;
+      background: linear-gradient(45deg, #667eea, #764ba2);
+      color: white;
+      padding: 8px 16px;
+      border-radius: 20px;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+
+    .video-link:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+    }
+
+    .author-badge {
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 15px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin-left: 10px;
+    }
+
+    .author-katou {
+      background: linear-gradient(45deg, #e74c3c, #c0392b);
+      color: white;
+    }
+
+    .author-komatsu {
+      background: linear-gradient(45deg, #3498db, #2980b9);
+      color: white;
+    }
+
+    .author-nishino {
+      background: linear-gradient(45deg, #9b59b6, #8e44ad);
+      color: white;
+    }
+
+    .accordion-toggle {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(45deg, #667eea, #764ba2);
+      color: white;
+      padding: 15px 30px;
+      border: none;
+      border-radius: 25px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      margin: 30px auto 0;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+    }
+
+    .accordion-toggle:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+    }
+
+    .accordion-toggle .arrow {
+      margin-left: 10px;
+      transition: transform 0.3s ease;
+    }
+
+    .accordion-toggle.active .arrow {
+      transform: rotate(180deg);
+    }
+
+    .accordion-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.5s ease;
+    }
+
+    .accordion-content.show {
+      max-height: 2000px;
+    }
+
+    .hidden-videos {
+      display: none;
+    }
+
+    .hidden-videos.show {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 25px;
+      margin-top: 25px;
+    }
+
+    @media (max-width: 768px) {
+      .videos-grid {
+        grid-template-columns: 1fr;
+      }
+
+      nav ul {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <h1>🎬 プロアカYouTube紹介</h1>
+      <p class="subtitle">プログラミング学習に役立つ動画を厳選してご紹介</p>
+      <nav>
+        <ul>
+          <li><a href="youtube/katou/index.html">加藤動画集</a></li>
+          <li><a href="youtube/komatsu/index.html">小松動画集</a></li>
+          <li><a href="youtube/nishino/index.html">西野動画集</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="playlist-section">
+      <h2 class="playlist-title">📚 早く知りたかった・・・最初にやるべきプログラミング言語特集</h2>
+
+      <div class="videos-grid">
+        <div class="video-card">
+          <div class="video-thumbnail">
+            <iframe src="https://www.youtube.com/embed/vmppHQkcMZo?si=LqSuKxgT2NOPdrNz" title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+          <div class="video-info">
+            <a href="youtube/katou/saikyou.proguraminng.html" class="video-title">
+              今から始めるべき最強プログラミング言語【2025年版】
+            </a>
+            <div class="video-author">
+              講師: 加藤先生 <span class="author-badge author-katou">加藤</span>
+            </div>
+            <a href="youtube/katou/saikyou.proguraminng.html" class="video-link">詳細を見る</a>
+          </div>
+        </div>
+
+        <div class="video-card">
+          <div class="video-thumbnail">
+            <iframe src="https://www.youtube.com/embed/8iGoCr4VgRc?si=sb22kfSGJsuVqZZu" title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+          <div class="video-info">
+            <a href="youtube/katou/kasegeru_proguraminng_top8.html" class="video-title">
+              1000万円以上稼げる最強プログラミング言語 TOP8【2025年版】
+            </a>
+            <div class="video-author">
+              講師: 加藤先生 <span class="author-badge author-katou">加藤</span>
+            </div>
+            <a href="youtube/katou/kasegeru_proguraminng_top8.html" class="video-link">詳細を見る</a>
+          </div>
+        </div>
+
+        <div class="video-card">
+          <div class="video-thumbnail">
+            <iframe src="https://www.youtube.com/embed/mGZRa43mEKk?si=AsWiUejrubWj22oR" title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+          <div class="video-info">
+            <a href="youtube/komatsu/jyou_takai_proguraminng.html" class="video-title">
+              【2025年】最も需要が高いWebアプリ開発案件【プログラミング言語】
+            </a>
+            <div class="video-author">
+              講師: 小松先生 <span class="author-badge author-komatsu">小松</span>
+            </div>
+            <a href="youtube/komatsu/jyou_takai_proguraminng.html" class="video-link">詳細を見る</a>
+          </div>
+        </div>
+      </div>
+
+      <button class="accordion-toggle" onclick="toggleAccordion('programming-languages')">
+        もっと見る <span class="arrow">↓</span>
+      </button>
+
+      <div class="accordion-content" id="programming-languages">
+        <div class="hidden-videos">
+          <div class="video-card">
+            <div class="video-thumbnail">
+              <iframe src="https://www.youtube.com/embed/NKbFcbqS5P8?si=WD3V0q-4IV7FYgin" title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+            <div class="video-info">
+              <a href="youtube/katou/zaitaku_kasegeru.proguraminng.html" class="video-title">
+                在宅で稼げる最強プログラミング言語ランキング【2025年版】
+              </a>
+              <div class="video-author">
+                講師: 加藤先生 <span class="author-badge author-katou">加藤</span>
+              </div>
+              <a href="youtube/katou/zaitaku_kasegeru.proguraminng.html" class="video-link">詳細を見る</a>
+            </div>
+          </div>
+
+          <div class="video-card">
+            <div class="video-thumbnail">
+              <iframe src="https://www.youtube.com/embed/vmppHQkcMZo?si=LqSuKxgT2NOPdrNz" title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+            <div class="video-info">
+              <a href="youtube/katou/syouraisei_proguraming_zenpen.html" class="video-title">
+                【前編】将来性がある人気の最強プログラミング言語TOP5【2025年版】
+              </a>
+              <div class="video-author">
+                講師: 加藤先生 <span class="author-badge author-katou">加藤</span>
+              </div>
+              <a href="youtube/katou/syouraisei_proguraming_zenpen.html" class="video-link">詳細を見る</a>
+            </div>
+          </div>
+
+          <div class="video-card">
+            <div class="video-thumbnail">
+              <iframe src="https://www.youtube.com/embed/J-uE6QruGc4?si=fb6i99B1JJgm2Cde" title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+            <div class="video-info">
+              <a href="youtube/katou/syouraisei_proguraming_kouhen.html" class="video-title">
+                【後編】将来性がある人気の最強プログラミング言語TOP5【2025年版】
+              </a>
+              <div class="video-author">
+                講師: 加藤先生 <span class="author-badge author-katou">加藤</span>
+              </div>
+              <a href="youtube/katou/syouraisei_proguraming_kouhen.html" class="video-link">詳細を見る</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="playlist-section">
+      <h2 class="playlist-title">🚀 シリーズ【まずはここから】初心者の方が最初に見るべき動画集</h2>
+
+      <div class="videos-grid">
+        <div class="video-card">
+          <div class="video-thumbnail">
+            <iframe src="https://www.youtube.com/embed/ief17KqCDQs?si=QFx9eeSepUTTyFOO" title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+          <div class="video-info">
+            <a href="youtube/komatsu/kousyounyuu_teisyuunyuu_programing.html" class="video-title">
+              プログラミング習得者の高収入と低収入の違い5選
+            </a>
+            <div class="video-author">
+              講師: 小松先生 <span class="author-badge author-komatsu">小松</span>
+            </div>
+            <a href="youtube/komatsu/kousyounyuu_teisyuunyuu_programing.html" class="video-link">詳細を見る</a>
+          </div>
+        </div>
+
+        <div class="video-card">
+          <div class="video-thumbnail">
+            <iframe src="https://www.youtube.com/embed/Tl4YioK1ljo?si=QleoDXYlNVmROKwG" title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+          <div class="video-info">
+            <a href="youtube/katou/90_zasetsu_proguraming_muitenai_hito.html" class="video-title">
+              【警告】90％挫折！？プログラミングに向いていない人の特徴5選
+            </a>
+            <div class="video-author">
+              講師: 加藤先生 <span class="author-badge author-katou">加藤</span>
+            </div>
+            <a href="youtube/katou/90_zasetsu_proguraming_muitenai_hito.html" class="video-link">詳細を見る</a>
+          </div>
+        </div>
+
+        <div class="video-card">
+          <div class="video-thumbnail">
+            <iframe src="https://www.youtube.com/embed/FfivKeebTBI?si=pnfHqc_U-6MYQyx2" title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+          <div class="video-info">
+            <a href="youtube/nishino/tensyoku_programing.html" class="video-title">
+              転職したいならプログラミングをやれ！【元介護士の現役エンジニア西野が語る】
+            </a>
+            <div class="video-author">
+              講師: 西野先生 <span class="author-badge author-nishino">西野</span>
+            </div>
+            <a href="youtube/nishino/tensyoku_programing.html" class="video-link">詳細を見る</a>
+          </div>
+        </div>
+      </div>
+
+      <button class="accordion-toggle" onclick="toggleAccordion('beginner-series')">
+        もっと見る <span class="arrow">↓</span>
+      </button>
+
+      <div class="accordion-content" id="beginner-series">
+        <div class="hidden-videos">
+          <div class="video-card">
+            <div class="video-thumbnail">
+              <iframe src="https://www.youtube.com/embed/475ly5zU7ng?si=Y0dYHcq0S3h0xtEo" title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+            <div class="video-info">
+              <a href="youtube/nishino/kaigoshi_yametoke.html" class="video-title">
+                【元介護士の現役エンジニア西野が語る】 介護士だけは絶対にやめとけ！プログラミングにしとけ
+              </a>
+              <div class="video-author">
+                講師: 西野先生 <span class="author-badge author-nishino">西野</span>
+              </div>
+              <a href="youtube/nishino/kaigoshi_yametoke.html" class="video-link">詳細を見る</a>
+            </div>
+          </div>
+
+          <div class="video-card">
+            <div class="video-thumbnail">
+              <iframe src="https://www.youtube.com/embed/iKiqL-Kur4o?si=2dKovTEG0YPiHWiD" title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+            <div class="video-info">
+              <a href="youtube/komatsu/2025_programing_load_map.html" class="video-title">
+                【2025年最新版】プログラミング未経験からAI活用で最短最速でプログラマになるロードマップ
+              </a>
+              <div class="video-author">
+                講師: 小松先生 <span class="author-badge author-komatsu">小松</span>
+              </div>
+              <a href="youtube/komatsu/2025_programing_load_map.html" class="video-link">詳細を見る</a>
+            </div>
+          </div>
+
+          <div class="video-card">
+            <div class="video-thumbnail">
+              <iframe src="https://www.youtube.com/embed/jCosZGP2mGY?si=Z9cY0PKznlhEPFH9" title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+            <div class="video-info">
+              <a href="youtube/katou/tyusotsu_programing.html" class="video-title">
+                【学歴・経歴不問】中卒からエンジニアになるプログラミング学習法
+              </a>
+              <div class="video-author">
+                講師: 加藤先生 <span class="author-badge author-katou">加藤</span>
+              </div>
+              <a href="youtube/katou/tyusotsu_programing.html" class="video-link">詳細を見る</a>
+            </div>
+          </div>
+
+          <div class="video-card">
+            <div class="video-thumbnail">
+              <iframe src="https://www.youtube.com/embed/l3Nwo0pzFFQ?si=nIBeqKjzb2q8nEW3" title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+            <div class="video-info">
+              <a href="youtube/komatsu/2025_programing_load_map.html" class="video-title">
+                最短最速でプログラミングを習得する７ステップ
+              </a>
+              <div class="video-author">
+                講師: 小松先生 <span class="author-badge author-komatsu">小松</span>
+              </div>
+              <a href="youtube/komatsu/2025_programing_load_map.html" class="video-link">詳細を見る</a>
+            </div>
+          </div>
+
+          <div class="video-card">
+            <div class="video-thumbnail">
+              <iframe src="https://www.youtube.com/embed/peUZvVONcas?si=uQq8JKfeNg__XTw1" title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+            <div class="video-info">
+              <a href="youtube/nishino/naze_hantoshide_kasegeru_programing.html" class="video-title">
+                なぜプログラミングを学習すれば半年で簡単に稼げるリモートワーカーになれるのか？
+              </a>
+              <div class="video-author">
+                講師: 西野先生 <span class="author-badge author-nishino">西野</span>
+              </div>
+              <a href="youtube/nishino/naze_hantoshide_kasegeru_programing.html" class="video-link">詳細を見る</a>
+            </div>
+          </div>
+
+          <div class="video-card">
+            <div class="video-thumbnail">
+              <iframe src="https://www.youtube.com/embed/LzE538zCAJk?si=IimYEvT5Ah8Qkr4U" title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+            <div class="video-info">
+              <a href="youtube/komatsu/proguraming_gakusyuu_ng.html" class="video-title">
+                プログラミング学習中に絶対にやってはいけないこと5選
+              </a>
+              <div class="video-author">
+                講師: 小松先生 <span class="author-badge author-komatsu">小松</span>
+              </div>
+              <a href="youtube/komatsu/proguraming_gakusyuu_ng.html" class="video-link">詳細を見る</a>
+            </div>
+          </div>
+
+          <div class="video-card">
+            <div class="video-thumbnail">
+              <iframe src="https://www.youtube.com/embed/7S1-ti_UICo?si=XPjJkvSdL8g0bWRT" title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+            <div class="video-info">
+              <a href="youtube/komatsu/programing_saidaino_kabe.html" class="video-title">
+                【挫折率90%】プログラミング学習の最大の壁の乗り越え方
+              </a>
+              <div class="video-author">
+                講師: 小松先生 <span class="author-badge author-komatsu">小松</span>
+              </div>
+              <a href="youtube/komatsu/programing_saidaino_kabe.html" class="video-link">詳細を見る</a>
+            </div>
+          </div>
+
+          <div class="video-card">
+            <div class="video-thumbnail">
+              <iframe src="https://www.youtube.com/embed/jbHSqwi09Os?si=jaqKAQQiqJWIi1o6" title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+            <div class="video-info">
+              <a href="youtube/komatsu/syosinsya_dokugaku_tensyoku_programing.html" class="video-title">
+                初心者から完全無料でプログラミングを独学して転職するまでのロードマップ
+              </a>
+              <div class="video-author">
+                講師: 小松先生 <span class="author-badge author-komatsu">小松</span>
+              </div>
+              <a href="youtube/komatsu/syosinsya_dokugaku_tensyoku_programing.html" class="video-link">詳細を見る</a>
+            </div>
+          </div>
+
+          <div class="video-card">
+            <div class="video-thumbnail">
+              <iframe src="https://www.youtube.com/embed/Ug4R6j7kHH0?si=IyqgaSLXkXn6QlWc" title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+            <div class="video-info">
+              <a href="youtube/nishino/yaritaikoto_byousoku.html" class="video-title">
+                【97%驚愕】プログラミング思考で"やりたい"を秒速発見
+              </a>
+              <div class="video-author">
+                講師: 西野先生 <span class="author-badge author-nishino">西野</span>
+              </div>
+              <a href="youtube/nishino/yaritaikoto_byousoku.html" class="video-link">詳細を見る</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function toggleAccordion(id) {
+      const content = document.getElementById(id);
+      const button = content.previousElementSibling;
+      const arrow = button.querySelector('.arrow');
+      const hiddenVideos = content.querySelector('.hidden-videos');
+
+      if (content.classList.contains('show')) {
+        // 閉じる
+        content.classList.remove('show');
+        hiddenVideos.classList.remove('show');
+        button.classList.remove('active');
+        button.innerHTML = 'もっと見る <span class="arrow">↓</span>';
+      } else {
+        // 開く
+        content.classList.add('show');
+        hiddenVideos.classList.add('show');
+        button.classList.add('active');
+        button.innerHTML = '閉じる <span class="arrow">↑</span>';
+      }
+    }
+  </script>
+</body>
+
+</html>

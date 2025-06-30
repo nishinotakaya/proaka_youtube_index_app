@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>今から始めるべき最強プログラミング言語【2025年版】 - 加藤先生</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+      min-height: 100vh;
+      color: #333;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    header {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 30px;
+      margin-bottom: 30px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-bottom: 20px;
+      color: #e74c3c;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 8px 16px;
+      border: 2px solid #e74c3c;
+      border-radius: 20px;
+      transition: all 0.3s ease;
+    }
+
+    .back-link:hover {
+      background: #e74c3c;
+      color: white;
+    }
+
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+      font-size: 2.2rem;
+      margin-bottom: 15px;
+      line-height: 1.3;
+    }
+
+    .video-meta {
+      text-align: center;
+      color: #7f8c8d;
+      font-size: 1rem;
+      margin-bottom: 20px;
+    }
+
+    .instructor-badge {
+      display: inline-block;
+      background: linear-gradient(45deg, #e74c3c, #c0392b);
+      color: white;
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-left: 10px;
+    }
+
+    .video-section {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 30px;
+      margin-bottom: 30px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    }
+
+    .video-container {
+      position: relative;
+      width: 100%;
+      max-width: 800px;
+      margin: 0 auto;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .video-container iframe {
+      width: 100%;
+      height: 450px;
+      border: none;
+    }
+
+    .transcript-section {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 30px;
+      margin-bottom: 30px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    }
+
+    .section-title {
+      font-size: 1.8rem;
+      color: #2c3e50;
+      margin-bottom: 20px;
+      text-align: center;
+      border-bottom: 3px solid #e74c3c;
+      padding-bottom: 10px;
+    }
+
+    .transcript-content {
+      background: #f8f9fa;
+      border-radius: 15px;
+      padding: 25px;
+      line-height: 1.8;
+      font-size: 1rem;
+      color: #2c3e50;
+    }
+
+    .transcript-content h3 {
+      color: #e74c3c;
+      margin: 20px 0 10px 0;
+      font-size: 1.3rem;
+    }
+
+    .transcript-content p {
+      margin-bottom: 15px;
+    }
+
+    .transcript-content ul {
+      margin: 15px 0;
+      padding-left: 20px;
+    }
+
+    .transcript-content li {
+      margin-bottom: 8px;
+    }
+
+    .key-points {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 30px;
+      margin-bottom: 30px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    }
+
+    .key-points-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .key-point-card {
+      background: linear-gradient(135deg, #e74c3c, #c0392b);
+      color: white;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(231, 76, 60, 0.3);
+    }
+
+    .key-point-card h4 {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+      border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+      padding-bottom: 8px;
+    }
+
+    .related-videos {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 30px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    }
+
+    .related-videos-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .related-video-card {
+      background: white;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    .related-video-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    .related-video-thumbnail {
+      width: 100%;
+      height: 150px;
+      background: #f0f0f0;
+    }
+
+    .related-video-thumbnail iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .related-video-info {
+      padding: 15px;
+    }
+
+    .related-video-title {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #2c3e50;
+      text-decoration: none;
+      display: block;
+      margin-bottom: 8px;
+      line-height: 1.4;
+    }
+
+    .related-video-title:hover {
+      color: #e74c3c;
+    }
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 1.8rem;
+      }
+
+      .video-container iframe {
+        height: 250px;
+      }
+
+      .key-points-grid,
+      .related-videos-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <a href="../katou/index.html" class="back-link">← 加藤動画集に戻る</a>
+      <h1>今から始めるべき最強プログラミング言語【2025年版】</h1>
+      <div class="video-meta">
+        講師: 加藤先生 <span class="instructor-badge">加藤</span>
+      </div>
+    </header>
+
+    <div class="video-section">
+      <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/vmppHQkcMZo?si=LqSuKxgT2NOPdrNz" title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+    </div>
+
+    <div class="key-points">
+      <h2 class="section-title">🎯 この動画のポイント</h2>
+      <div class="key-points-grid">
+        <div class="key-point-card">
+          <h4>市場需要の高い言語</h4>
+          <p>2025年に最も需要が高く、就職・転職に有利なプログラミング言語をランキング形式で紹介</p>
+        </div>
+        <div class="key-point-card">
+          <h4>初心者向け解説</h4>
+          <p>プログラミング未経験者でも理解できるよう、各言語の特徴と学習難易度を詳しく解説</p>
+        </div>
+        <div class="key-point-card">
+          <h4>将来性重視</h4>
+          <p>一時的な流行ではなく、長期的に安定して需要がある言語を厳選して紹介</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="transcript-section">
+      <h2 class="section-title">📝 動画内容の文字起こし</h2>
+      <div class="transcript-content">
+        <h3>【序章】なぜ今プログラミング言語を学ぶべきなのか？</h3>
+        <p>こんにちは、加藤です。2025年に入って、プログラミングを学びたいと思っている方も多いと思います。でも、どの言語から始めればいいのか迷いますよね。</p>
+
+        <p>今日は、2025年に最も学ぶ価値のあるプログラミング言語を、市場の需要と将来性を考慮してランキング形式でお伝えします。</p>
+
+        <h3>【第1位】Python</h3>
+        <p>まず第1位は、やはりPythonです。AI・機械学習、データサイエンス、Web開発、自動化など、幅広い分野で使われています。</p>
+        <ul>
+          <li>初心者に優しい文法</li>
+          <li>豊富なライブラリ</li>
+          <li>AI・機械学習分野での圧倒的な需要</li>
+          <li>年収相場：400万円〜800万円</li>
+        </ul>
+
+        <h3>【第2位】JavaScript</h3>
+        <p>第2位はJavaScriptです。Web開発には欠かせない言語で、フロントエンドからバックエンドまで幅広く使えます。</p>
+        <ul>
+          <li>Web開発の必須スキル</li>
+          <li>React、Vue.jsなどのフレームワーク</li>
+          <li>Node.jsでのサーバーサイド開発</li>
+          <li>年収相場：350万円〜700万円</li>
+        </ul>
+
+        <h3>【第3位】TypeScript</h3>
+        <p>第3位はTypeScriptです。JavaScriptの上位互換言語として、大規模開発で重宝されています。</p>
+        <ul>
+          <li>型安全性によるバグの削減</li>
+          <li>大企業での採用が増加</li>
+          <li>React、Vue.jsとの相性が良い</li>
+          <li>年収相場：400万円〜800万円</li>
+        </ul>
+
+        <h3>【まとめ】学習の優先順位</h3>
+        <p>初心者の方は、まずPythonから始めることをお勧めします。その後、Web開発に興味があればJavaScript、より本格的な開発をしたい場合はTypeScriptを学ぶのが良いでしょう。</p>
+
+        <p>重要なのは、一つの言語を深く学ぶことです。表面的な知識ではなく、実際にプロジェクトを作って経験を積むことが成功への近道です。</p>
+      </div>
+    </div>
+
+    <div class="related-videos">
+      <h2 class="section-title">📚 関連動画</h2>
+      <div class="related-videos-grid">
+        <div class="related-video-card">
+          <div class="related-video-thumbnail">
+            <iframe src="https://www.youtube.com/embed/8iGoCr4VgRc?si=sb22kfSGJsuVqZZu" title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+          <div class="related-video-info">
+            <a href="kasegeru_proguraminng_top8.html" class="related-video-title">
+              1000万円以上稼げる最強プログラミング言語 TOP8【2025年版】
+            </a>
+          </div>
+        </div>
+
+        <div class="related-video-card">
+          <div class="related-video-thumbnail">
+            <iframe src="https://www.youtube.com/embed/NKbFcbqS5P8?si=WD3V0q-4IV7FYgin" title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+          <div class="related-video-info">
+            <a href="zaitaku_kasegeru.proguraminng.html" class="related-video-title">
+              在宅で稼げる最強プログラミング言語ランキング【2025年版】
+            </a>
+          </div>
+        </div>
+
+        <div class="related-video-card">
+          <div class="related-video-thumbnail">
+            <iframe src="https://www.youtube.com/embed/vmppHQkcMZo?si=LqSuKxgT2NOPdrNz" title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+          <div class="related-video-info">
+            <a href="syouraisei_proguraming_zenpen.html" class="related-video-title">
+              【前編】将来性がある人気の最強プログラミング言語TOP5【2025年版】
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

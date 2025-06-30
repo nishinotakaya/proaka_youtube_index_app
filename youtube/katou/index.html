@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>加藤動画集 - プロアカYouTube紹介</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+      min-height: 100vh;
+      color: #333;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    header {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 30px;
+      margin-bottom: 30px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-bottom: 20px;
+      color: #e74c3c;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 8px 16px;
+      border: 2px solid #e74c3c;
+      border-radius: 20px;
+      transition: all 0.3s ease;
+    }
+
+    .back-link:hover {
+      background: #e74c3c;
+      color: white;
+    }
+
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+      background: linear-gradient(45deg, #e74c3c, #c0392b);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .subtitle {
+      text-align: center;
+      color: #7f8c8d;
+      font-size: 1.1rem;
+      margin-bottom: 20px;
+    }
+
+    .instructor-info {
+      text-align: center;
+      background: linear-gradient(45deg, #e74c3c, #c0392b);
+      color: white;
+      padding: 20px;
+      border-radius: 15px;
+      margin-bottom: 30px;
+    }
+
+    .instructor-name {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .instructor-description {
+      font-size: 1rem;
+      opacity: 0.9;
+    }
+
+    .videos-section {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 30px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    }
+
+    .section-title {
+      font-size: 1.8rem;
+      color: #2c3e50;
+      margin-bottom: 30px;
+      text-align: center;
+      border-bottom: 3px solid #e74c3c;
+      padding-bottom: 10px;
+    }
+
+    .videos-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 25px;
+    }
+
+    .video-card {
+      background: white;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+      border: 1px solid #e0e0e0;
+    }
+
+    .video-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    }
+
+    .video-thumbnail {
+      width: 100%;
+      height: 200px;
+      background: #f0f0f0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .video-thumbnail iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .video-info {
+      padding: 20px;
+    }
+
+    .video-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #2c3e50;
+      margin-bottom: 10px;
+      line-height: 1.4;
+      text-decoration: none;
+      display: block;
+    }
+
+    .video-title:hover {
+      color: #e74c3c;
+    }
+
+    .video-description {
+      color: #7f8c8d;
+      font-size: 0.9rem;
+      margin-bottom: 15px;
+      line-height: 1.5;
+    }
+
+    .video-link {
+      display: inline-block;
+      background: linear-gradient(45deg, #e74c3c, #c0392b);
+      color: white;
+      padding: 8px 16px;
+      border-radius: 20px;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+
+    .video-link:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);
+    }
+
+    @media (max-width: 768px) {
+      .videos-grid {
+        grid-template-columns: 1fr;
+      }
+
+      h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <a href="../../top.html" class="back-link">← トップページに戻る</a>
+      <h1>🎬 加藤動画集</h1>
+      <p class="subtitle">プログラミング学習のエキスパート</p>
+    </header>
+
+    <div class="instructor-info">
+      <div class="instructor-name">加藤先生</div>
+      <div class="instructor-description">
+        プログラミング教育の第一人者として、初心者から上級者まで分かりやすく解説。<br>
+        実践的なスキルとキャリア形成のアドバイスを提供。
+      </div>
+    </div>
+
+    <div class="videos-section">
+      <h2 class="section-title">📚 プログラミング言語特集</h2>
+
+      <div class="videos-grid">
+        <div class="video-card">
+          <div class="video-thumbnail">
+            <iframe src="https://www.youtube.com/embed/vmppHQkcMZo?si=LqSuKxgT2NOPdrNz" title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+          <div class="video-info">
+            <a href="saikyou.proguraminng.html" class="video-title">
+              今から始めるべき最強プログラミング言語【2025年版】
+            </a>
+            <div class="video-description">
+              プログラミング初心者向けに、2025年に最も学ぶ価値のある言語をランキング形式で紹介。
+              市場の需要と将来性を考慮した選定基準で解説。
+            </div>
+            <a href="saikyou.proguraminng.html" class="video-link">詳細を見る</a>
+          </div>
+        </div>
+
+        <div class="video-card">
+          <div class="video-thumbnail">
+            <iframe src="https://www.youtube.com/embed/8iGoCr4VgRc?si=sb22kfSGJsuVqZZu" title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+          <div class="video-info">
+            <a href="kasegeru_proguraminng_top8.html" class="video-title">
+              1000万円以上稼げる最強プログラミング言語 TOP8【2025年版】
+            </a>
+            <div class="video-description">
+              高収入を目指すプログラマー必見！年収1000万円以上を実現できる言語を
+              市場データと実例を交えて詳しく解説。
+            </div>
+            <a href="kasegeru_proguraminng_top8.html" class="video-link">詳細を見る</a>
+          </div>
+        </div>
+
+        <div class="video-card">
+          <div class="video-thumbnail">
+            <iframe src="https://www.youtube.com/embed/NKbFcbqS5P8?si=WD3V0q-4IV7FYgin" title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+          <div class="video-info">
+            <a href="zaitaku_kasegeru.proguraminng.html" class="video-title">
+              在宅で稼げる最強プログラミング言語ランキング【2025年版】
+            </a>
+            <div class="video-description">
+              リモートワーク時代に対応した在宅で高収入を得られる言語を紹介。
+              フリーランスや副業にも最適なスキルを解説。
+            </div>
+            <a href="zaitaku_kasegeru.proguraminng.html" class="video-link">詳細を見る</a>
+          </div>
+        </div>
+
+        <div class="video-card">
+          <div class="video-thumbnail">
+            <iframe src="https://www.youtube.com/embed/vmppHQkcMZo?si=LqSuKxgT2NOPdrNz" title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+          <div class="video-info">
+            <a href="syouraisei_proguraming_zenpen.html" class="video-title">
+              【前編】将来性がある人気の最強プログラミング言語TOP5【2025年版】
+            </a>
+            <div class="video-description">
+              将来性と人気度を重視した言語ランキングの前編。
+              技術トレンドと市場動向を分析して選定した言語を紹介。
+            </div>
+            <a href="syouraisei_proguraming_zenpen.html" class="video-link">詳細を見る</a>
+          </div>
+        </div>
+
+        <div class="video-card">
+          <div class="video-thumbnail">
+            <iframe src="https://www.youtube.com/embed/J-uE6QruGc4?si=fb6i99B1JJgm2Cde" title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+          <div class="video-info">
+            <a href="syouraisei_proguraming_kouhen.html" class="video-title">
+              【後編】将来性がある人気の最強プログラミング言語TOP5【2025年版】
+            </a>
+            <div class="video-description">
+              前編に続く後編では、より専門的な言語とその学習方法について詳しく解説。
+              実践的なスキル習得のコツも紹介。
+            </div>
+            <a href="syouraisei_proguraming_kouhen.html" class="video-link">詳細を見る</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

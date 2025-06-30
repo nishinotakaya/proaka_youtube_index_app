@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>【プログラミング初心者必見】AIを使ったらテトリスゲームが一瞬で完成 - 小松先生</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+      min-height: 100vh;
+      color: #333;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    header {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 30px;
+      margin-bottom: 30px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    }
+
+    .back-link {
+      display: inline-block;
+      color: #3498db;
+      text-decoration: none;
+      font-weight: 600;
+      margin-bottom: 20px;
+      transition: color 0.3s ease;
+    }
+
+    .back-link:hover {
+      color: #2980b9;
+    }
+
+    h1 {
+      color: #2c3e50;
+      font-size: 2rem;
+      margin-bottom: 15px;
+      line-height: 1.3;
+    }
+
+    .video-meta {
+      color: #7f8c8d;
+      font-size: 1.1rem;
+    }
+
+    .instructor-badge {
+      display: inline-block;
+      background: linear-gradient(45deg, #3498db, #2980b9);
+      color: white;
+      padding: 4px 12px;
+      border-radius: 15px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin-left: 10px;
+    }
+
+    .video-section {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 30px;
+      margin-bottom: 30px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    }
+
+    .video-container {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%;
+      border-radius: 15px;
+      overflow: hidden;
+    }
+
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .key-points {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 30px;
+      margin-bottom: 30px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    }
+
+    .section-title {
+      color: #2c3e50;
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .key-points-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
+
+    .key-point-card {
+      background: linear-gradient(135deg, #3498db, #2980b9);
+      color: white;
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+    }
+
+    .key-point-card h4 {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+    }
+
+    .transcript {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 30px;
+      margin-bottom: 30px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    }
+
+    .transcript-content {
+      line-height: 1.8;
+      color: #2c3e50;
+    }
+
+    .transcript-content h3 {
+      color: #3498db;
+      margin: 25px 0 15px 0;
+      font-size: 1.3rem;
+    }
+
+    .transcript-content p {
+      margin-bottom: 15px;
+    }
+
+    .transcript-content strong {
+      color: #3498db;
+    }
+
+    .related-videos {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 30px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    }
+
+    .related-videos-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
+
+    .related-video-card {
+      background: white;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .related-video-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .related-video-thumbnail {
+      width: 100%;
+      height: 180px;
+      position: relative;
+    }
+
+    .related-video-thumbnail iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .related-video-info {
+      padding: 20px;
+    }
+
+    .related-video-title {
+      color: #2c3e50;
+      text-decoration: none;
+      font-weight: 600;
+      line-height: 1.4;
+      display: block;
+      transition: color 0.3s ease;
+    }
+
+    .related-video-title:hover {
+      color: #3498db;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        padding: 10px;
+      }
+
+      h1 {
+        font-size: 1.5rem;
+      }
+
+      .key-points-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .related-videos-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <a href="../komatsu/index.html" class="back-link">← 小松動画集に戻る</a>
+      <h1>【プログラミング初心者必見】AIを使ったらテトリスゲームが一瞬で完成</h1>
+      <div class="video-meta">
+        講師: 小松先生 <span class="instructor-badge">小松</span>
+      </div>
+    </header>
+
+    <div class="video-section">
+      <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/0mEej4S2WOQ?si=nnLM4nkux47jQBHB" title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+    </div>
+
+    <div class="key-points">
+      <h2 class="section-title">🎯 この動画のポイント</h2>
+      <div class="key-points-grid">
+        <div class="key-point-card">
+          <h4>AI活用の実践例</h4>
+          <p>現役エンジニアがAIを活用してテトリスゲームを開発し、その驚くべき効率性を実証</p>
+        </div>
+        <div class="key-point-card">
+          <h4>初心者向け解説</h4>
+          <p>プログラミング初心者でも理解できるよう、ゲーム開発の基礎から応用まで詳しく解説</p>
+        </div>
+        <div class="key-point-card">
+          <h4>開発効率の向上</h4>
+          <p>AIを活用することで、従来の開発時間を大幅に短縮し、高品質なゲームを制作</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="transcript">
+      <h2 class="section-title">📝 動画の文字起こし</h2>
+      <div class="transcript-content">
+        <h3>【導入】AIゲーム開発の挑戦</h3>
+        <p>こんにちは、小松です。今回は現役エンジニアとして、AIを活用してテトリスゲームの開発に挑戦してみました。</p>
+
+        <p>「AIで本当にゲームが作れるの？」「初心者でもできるの？」という疑問にお答えするため、実際に開発してみました。</p>
+
+        <h3>【企画】テトリスゲームの設計</h3>
+        <p>まず、テトリスゲームの主要な要素を整理しました：</p>
+
+        <p><strong>1. 基本ゲームプレイ</strong><br>
+          テトリミノの落下、回転、ライン消去</p>
+
+        <p><strong>2. ゲームシステム</strong><br>
+          スコア、レベル、ゲームオーバー判定</p>
+
+        <p><strong>3. ユーザーインターフェース</strong><br>
+          ゲーム画面、スコア表示、操作説明</p>
+
+        <p><strong>4. 音響効果</strong><br>
+          BGM、効果音</p>
+
+        <h3>【開発開始】AIとの協働</h3>
+        <p>開発を開始して驚いたのは、AIの理解力の高さです。「テトリスゲームを作りたい」と伝えるだけで、適切な技術スタックとアーキテクチャを提案してくれました。</p>
+
+        <p>特に印象的だったのは、AIが提案するゲームエンジンの選択です。HTML5 CanvasとJavaScriptを使用した軽量なゲームエンジンを提案してくれました。</p>
+
+        <h3>【実装過程】段階的な開発</h3>
+        <p>実装過程では、以下の段階で開発を進めました：</p>
+
+        <p><strong>1. 基本システムの実装</strong><br>
+          ゲームボード、テトリミノの表示、基本的な落下機能</p>
+
+        <p><strong>2. ゲームロジックの実装</strong><br>
+          テトリミノの回転、移動、ライン消去の判定</p>
+
+        <p><strong>3. ユーザーインターフェースの実装</strong><br>
+          スコア表示、レベル表示、ゲームオーバー画面</p>
+
+        <p><strong>4. 音響効果の実装</strong><br>
+          BGM、効果音の追加</p>
+
+        <h3>【技術的な挑戦】</h3>
+        <p>開発過程で直面した技術的な挑戦とその解決方法：</p>
+
+        <p><strong>1. テトリミノの回転</strong><br>
+          複雑な回転ロジックをAIの提案で効率的に実装</p>
+
+        <p><strong>2. ライン消去の判定</strong><br>
+          効率的なライン消去アルゴリズムの実装</p>
+
+        <p><strong>3. 衝突判定</strong><br>
+          テトリミノ同士の衝突判定と壁との衝突判定</p>
+
+        <p><strong>4. パフォーマンス最適化</strong><br>
+          60FPSでの安定した動作を実現するための最適化</p>
+
+        <h3>【完成】驚きの品質</h3>
+        <p>最終的に完成したゲームは、予想以上の品質でした。以下の機能が実装されました：</p>
+
+        <p><strong>1. 基本ゲームプレイ</strong><br>
+          テトリミノの落下、回転、移動、ライン消去</p>
+
+        <p><strong>2. ゲームシステム</strong><br>
+          スコア計算、レベルアップ、ゲームオーバー判定</p>
+
+        <p><strong>3. ユーザーインターフェース</strong><br>
+          直感的な操作、スコア表示、レベル表示</p>
+
+        <p><strong>4. 音響効果</strong><br>
+          BGM、効果音による没入感の向上</p>
+
+        <p><strong>5. レスポンシブデザイン</strong><br>
+          スマートフォンでも遊べる設計</p>
+
+        <h3>【考察】AIゲーム開発の可能性</h3>
+        <p>この経験を通じて、AIゲーム開発の可能性を実感しました：</p>
+
+        <p><strong>1. 開発時間の短縮</strong><br>
+          従来なら数ヶ月かかるゲーム開発が数週間で完了</p>
+
+        <p><strong>2. アイデアの実現</strong><br>
+          人間では思いつかないような面白い機能も実装可能</p>
+
+        <p><strong>3. 学習コストの削減</strong><br>
+          新しい技術の学習時間を大幅に短縮</p>
+
+        <p><strong>4. プロトタイプの迅速化</strong><br>
+          アイデアを素早く形にできる</p>
+
+        <h3>【初心者へのアドバイス】</h3>
+        <p>ゲーム開発に興味がある初心者の方には、以下のステップをお勧めします：</p>
+
+        <p><strong>1. 基礎を学ぶ</strong><br>
+          まずは基本的なプログラミングの概念を理解しましょう。</p>
+
+        <p><strong>2. 簡単なゲームから始める</strong><br>
+          いきなり複雑なゲームを作るのではなく、簡単なゲームから始めましょう。</p>
+
+        <p><strong>3. AIを活用する</strong><br>
+          基礎ができたら、積極的にAIを活用してください。</p>
+
+        <p><strong>4. コミュニティに参加する</strong><br>
+          他の開発者と交流することで、新しいアイデアや技術を学べます。</p>
+
+        <h3>【まとめ】AIゲーム開発の未来</h3>
+        <p>AIゲーム開発は、ゲーム開発をより楽しく、効率的にする素晴らしいツールです。ただし、重要なのはAIを「パートナー」として活用することです。</p>
+
+        <p>AIは人間の創造性をサポートするものであり、完全に人間を置き換えるものではありません。むしろ、人間の能力を拡張し、より創造的なゲーム開発に集中できるようにするものだと考えています。</p>
+
+        <p>ぜひ、この機会にAIを活用したゲーム開発に挑戦してみてください。きっと、新しい発見があるはずです。</p>
+      </div>
+    </div>
+
+    <div class="related-videos">
+      <h2 class="section-title">📚 関連動画</h2>
+      <div class="related-videos-grid">
+        <div class="related-video-card">
+          <div class="related-video-thumbnail">
+            <iframe src="https://www.youtube.com/embed/ief17KqCDQs?si=QFx9eeSepUTTyFOO" title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+          <div class="related-video-info">
+            <a href="kousyounyuu_teisyuunyuu_programing.html" class="related-video-title">
+              プログラミング習得者の高収入と低収入の違い5選
+            </a>
+          </div>
+        </div>
+
+        <div class="related-video-card">
+          <div class="related-video-thumbnail">
+            <iframe src="https://www.youtube.com/embed/iKiqL-Kur4o?si=2dKovTEG0YPiHWiD" title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+          <div class="related-video-info">
+            <a href="2025_programing_load_map.html" class="related-video-title">
+              【2025年最新版】プログラミング未経験からAI活用で最短最速でプログラマになるロードマップ
+            </a>
+          </div>
+        </div>
+
+        <div class="related-video-card">
+          <div class="related-video-thumbnail">
+            <iframe src="https://www.youtube.com/embed/l3Nwo0pzFFQ?si=nIBeqKjzb2q8nEW3" title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+          <div class="related-video-info">
+            <a href="saikyou.proguraminng.html" class="related-video-title">
+              最短最速でプログラミングを習得する７ステップ
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

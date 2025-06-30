@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>【97%驚愕】プログラミング思考で"やりたい"を秒速発見 - 西野先生</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #9b59b6 0%, #8e44ad 100%);
+      min-height: 100vh;
+      color: #333;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    header {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 30px;
+      margin-bottom: 30px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    }
+
+    .back-link {
+      display: inline-block;
+      background: linear-gradient(45deg, #9b59b6, #8e44ad);
+      color: white;
+      padding: 10px 20px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: 600;
+      margin-bottom: 20px;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(155, 89, 182, 0.3);
+    }
+
+    .back-link:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(155, 89, 182, 0.4);
+    }
+
+    h1 {
+      color: #2c3e50;
+      font-size: 2.2rem;
+      margin-bottom: 10px;
+      background: linear-gradient(45deg, #9b59b6, #8e44ad);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .author-info {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+
+    .author-badge {
+      background: linear-gradient(45deg, #9b59b6, #8e44ad);
+      color: white;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+
+    .video-section {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 30px;
+      margin-bottom: 30px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    }
+
+    .video-container {
+      position: relative;
+      width: 100%;
+      height: 0;
+      padding-bottom: 56.25%;
+      margin-bottom: 30px;
+    }
+
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 15px;
+    }
+
+    .points-section {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 30px;
+      margin-bottom: 30px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    }
+
+    .points-title {
+      font-size: 1.5rem;
+      color: #2c3e50;
+      margin-bottom: 20px;
+      border-bottom: 3px solid #9b59b6;
+      padding-bottom: 10px;
+    }
+
+    .points-list {
+      list-style: none;
+    }
+
+    .points-list li {
+      background: linear-gradient(45deg, #9b59b6, #8e44ad);
+      color: white;
+      padding: 15px 20px;
+      margin-bottom: 15px;
+      border-radius: 10px;
+      font-weight: 500;
+      box-shadow: 0 4px 15px rgba(155, 89, 182, 0.2);
+    }
+
+    .transcript-section {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 30px;
+      margin-bottom: 30px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    }
+
+    .transcript-title {
+      font-size: 1.5rem;
+      color: #2c3e50;
+      margin-bottom: 20px;
+      border-bottom: 3px solid #9b59b6;
+      padding-bottom: 10px;
+    }
+
+    .transcript-content {
+      background: #f8f9fa;
+      padding: 25px;
+      border-radius: 15px;
+      line-height: 1.8;
+      color: #2c3e50;
+      max-height: 400px;
+      overflow-y: auto;
+    }
+
+    .related-videos {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 30px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    }
+
+    .related-title {
+      font-size: 1.5rem;
+      color: #2c3e50;
+      margin-bottom: 20px;
+      border-bottom: 3px solid #9b59b6;
+      padding-bottom: 10px;
+    }
+
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
+
+    .related-card {
+      background: white;
+      border-radius: 15px;
+      padding: 20px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+      border: 1px solid #e0e0e0;
+    }
+
+    .related-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    .related-card h3 {
+      color: #2c3e50;
+      margin-bottom: 10px;
+      font-size: 1.1rem;
+    }
+
+    .related-card a {
+      color: #9b59b6;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+
+    .related-card a:hover {
+      color: #8e44ad;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        padding: 15px;
+      }
+
+      h1 {
+        font-size: 1.8rem;
+      }
+
+      .related-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <a href="./index.html" class="back-link">← 西野先生の動画一覧に戻る</a>
+      <h1>【97%驚愕】プログラミング思考で"やりたい"を秒速発見</h1>
+      <div class="author-info">
+        <span class="author-badge">西野先生</span>
+        <span style="color: #7f8c8d;">元介護士の現役エンジニア</span>
+      </div>
+    </header>
+
+    <div class="video-section">
+      <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/Ug4R6j7kHH0?si=IyqgaSLXkXn6QlWc" title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+    </div>
+
+    <div class="points-section">
+      <h2 class="points-title">🎯 この動画のポイント</h2>
+      <ul class="points-list">
+        <li>プログラミング思考を日常生活に応用する具体的な方法を紹介</li>
+        <li>問題解決能力を向上させる論理的思考の鍛え方</li>
+        <li>目標設定と達成のための効率的なアプローチ手法</li>
+        <li>プログラミング学習が人生の他の分野に与える好影響</li>
+        <li>実際の成功事例を通じた実践的なアドバイス</li>
+      </ul>
+    </div>
+
+    <div class="transcript-section">
+      <h2 class="transcript-title">📝 動画の文字起こし</h2>
+      <div class="transcript-content">
+        <p><strong>西野先生：</strong>こんにちは、元介護士の現役エンジニア、西野です。今日は、プログラミング思考を使って「やりたいこと」を秒速で発見する方法についてお話しします。</p>
+
+        <p>多くの方が「何をやりたいかわからない」「目標が見つからない」と悩んでいます。しかし、プログラミング思考を身につけることで、この問題を解決できるのです。</p>
+
+        <p><strong>プログラミング思考とは</strong></p>
+
+        <p>プログラミング思考とは、問題を小さな要素に分解し、論理的に解決していく思考法です。この思考法は、プログラミング以外の分野でも非常に役立ちます。</p>
+
+        <p><strong>1. 問題の分解</strong><br>
+          大きな問題を小さな問題に分解することで、解決しやすくなります。例えば、「やりたいことが見つからない」という問題を以下のように分解できます：</p>
+
+        <ul>
+          <li>自分の興味・関心を整理する</li>
+          <li>現在のスキルを把握する</li>
+          <li>市場の需要を調査する</li>
+          <li>実現可能性を検討する</li>
+        </ul>
+
+        <p><strong>2. アルゴリズム的思考</strong><br>
+          物事を順序立てて考えることで、効率的に目標を達成できます。以下のステップで「やりたいこと」を発見しましょう：</p>
+
+        <p><strong>ステップ1：自己分析</strong><br>
+          まず、自分の興味・関心、強み、弱みを整理します。以下の質問に答えてみてください：</p>
+
+        <ul>
+          <li>どんなことに時間を忘れて没頭できるか？</li>
+          <li>人から褒められることは何か？</li>
+          <li>改善したいと思うことは何か？</li>
+          <li>将来の自分はどうなっていたいか？</li>
+        </ul>
+
+        <p><strong>ステップ2：市場調査</strong><br>
+          自分の興味・関心と市場の需要を照らし合わせます。以下の点を調査しましょう：</p>
+
+        <ul>
+          <li>その分野の市場規模はどの程度か？</li>
+          <li>競合はどの程度いるか？</li>
+          <li>収益性はどの程度か？</li>
+          <li>将来性はあるか？</li>
+        </ul>
+
+        <p><strong>ステップ3：実現可能性の検討</strong><br>
+          目標を実現するために必要なリソースを確認します：</p>
+
+        <ul>
+          <li>必要なスキルは何か？</li>
+          <li>学習に必要な時間はどの程度か？</li>
+          <li>必要な資金はどの程度か？</li>
+          <li>リスクはどの程度か？</li>
+        </ul>
+
+        <p><strong>ステップ4：アクションプランの作成</strong><br>
+          具体的な行動計画を作成します：</p>
+
+        <ul>
+          <li>短期目標（1ヶ月〜3ヶ月）</li>
+          <li>中期目標（3ヶ月〜1年）</li>
+          <li>長期目標（1年以上）</li>
+          <li>各段階での具体的な行動</li>
+        </ul>
+
+        <p><strong>プログラミング思考の応用例</strong></p>
+
+        <p><strong>1. デバッグ思考</strong><br>
+          問題が発生したときに、原因を特定し、解決策を実行する思考法です。人生の問題にも応用できます。</p>
+
+        <p><strong>2. 最適化思考</strong><br>
+          効率を重視して、最小の努力で最大の結果を得ることを目指す思考法です。</p>
+
+        <p><strong>3. モジュール化思考</strong><br>
+          複雑な問題を小さな部分に分けて、それぞれを独立して解決する思考法です。</p>
+
+        <p><strong>実際の成功事例</strong></p>
+
+        <p>私自身、介護士からプログラマーに転身する際に、このプログラミング思考を活用しました：</p>
+
+        <p><strong>1. 問題の特定</strong><br>
+          介護士として働いていたが、収入と働き方に不満があった。</p>
+
+        <p><strong>2. 解決策の検討</strong><br>
+          プログラミングを学んで、リモートワークで働くことを選択。</p>
+
+        <p><strong>3. 実装</strong><br>
+          6ヶ月間、集中的にプログラミングを学習。</p>
+
+        <p><strong>4. テスト・改善</strong><br>
+          実際に案件を受注し、スキルを向上させながら収入を増加。</p>
+
+        <p><strong>プログラミング思考を身につける方法</strong></p>
+
+        <p><strong>1. プログラミング学習</strong><br>
+          実際にプログラミングを学ぶことで、論理的思考が身につきます。</p>
+
+        <p><strong>2. 問題解決の練習</strong><br>
+          日常的な問題をプログラミング思考で解決する練習をしましょう。</p>
+
+        <p><strong>3. 継続的な学習</strong><br>
+          新しい技術や手法を学び続けることで、思考力が向上します。</p>
+
+        <p><strong>まとめ</strong></p>
+
+        <p>プログラミング思考を身につけることで、以下のようなメリットがあります：</p>
+
+        <ul>
+          <li>問題解決能力の向上</li>
+          <li>効率的な目標達成</li>
+          <li>論理的思考力の向上</li>
+          <li>創造性の向上</li>
+          <li>継続的な成長</li>
+        </ul>
+
+        <p>プログラミング思考は、単なる技術的なスキルではありません。人生をより豊かにするための思考法です。ぜひ、この思考法を活用して、自分の「やりたいこと」を発見してください。</p>
+
+        <p>次回は、具体的なプログラミング学習方法について詳しく解説します。お楽しみに！</p>
+      </div>
+    </div>
+
+    <div class="related-videos">
+      <h2 class="related-title">📚 関連動画</h2>
+      <div class="related-grid">
+        <div class="related-card">
+          <h3>転職したいならプログラミングをやれ！【元介護士の現役エンジニア西野が語る】</h3>
+          <a href="tensyoku_programing.html">詳細を見る →</a>
+        </div>
+        <div class="related-card">
+          <h3>【元介護士の現役エンジニア西野が語る】 介護士だけは絶対にやめとけ！プログラミングにしとけ</h3>
+          <a href="kaigoshi_yametoke.html">詳細を見る →</a>
+        </div>
+        <div class="related-card">
+          <h3>なぜプログラミングを学習すれば半年で簡単に稼げるリモートワーカーになれるのか？</h3>
+          <a href="naze_hantoshide_kasegeru_programing.html">詳細を見る →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

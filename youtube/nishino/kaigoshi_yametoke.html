@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>【元介護士の現役エンジニア西野が語る】 介護士だけは絶対にやめとけ！プログラミングにしとけ - 西野先生</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #9b59b6 0%, #8e44ad 100%);
+      min-height: 100vh;
+      color: #333;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    header {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 30px;
+      margin-bottom: 30px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    }
+
+    .back-link {
+      display: inline-block;
+      background: linear-gradient(45deg, #9b59b6, #8e44ad);
+      color: white;
+      padding: 10px 20px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: 600;
+      margin-bottom: 20px;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(155, 89, 182, 0.3);
+    }
+
+    .back-link:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(155, 89, 182, 0.4);
+    }
+
+    h1 {
+      color: #2c3e50;
+      font-size: 2.2rem;
+      margin-bottom: 10px;
+      background: linear-gradient(45deg, #9b59b6, #8e44ad);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .author-info {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+
+    .author-badge {
+      background: linear-gradient(45deg, #9b59b6, #8e44ad);
+      color: white;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+
+    .video-section {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 30px;
+      margin-bottom: 30px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    }
+
+    .video-container {
+      position: relative;
+      width: 100%;
+      height: 0;
+      padding-bottom: 56.25%;
+      margin-bottom: 30px;
+    }
+
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 15px;
+    }
+
+    .points-section {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 30px;
+      margin-bottom: 30px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    }
+
+    .points-title {
+      font-size: 1.5rem;
+      color: #2c3e50;
+      margin-bottom: 20px;
+      border-bottom: 3px solid #9b59b6;
+      padding-bottom: 10px;
+    }
+
+    .points-list {
+      list-style: none;
+    }
+
+    .points-list li {
+      background: linear-gradient(45deg, #9b59b6, #8e44ad);
+      color: white;
+      padding: 15px 20px;
+      margin-bottom: 15px;
+      border-radius: 10px;
+      font-weight: 500;
+      box-shadow: 0 4px 15px rgba(155, 89, 182, 0.2);
+    }
+
+    .transcript-section {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 30px;
+      margin-bottom: 30px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    }
+
+    .transcript-title {
+      font-size: 1.5rem;
+      color: #2c3e50;
+      margin-bottom: 20px;
+      border-bottom: 3px solid #9b59b6;
+      padding-bottom: 10px;
+    }
+
+    .transcript-content {
+      background: #f8f9fa;
+      padding: 25px;
+      border-radius: 15px;
+      line-height: 1.8;
+      color: #2c3e50;
+      max-height: 400px;
+      overflow-y: auto;
+    }
+
+    .related-videos {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 30px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    }
+
+    .related-title {
+      font-size: 1.5rem;
+      color: #2c3e50;
+      margin-bottom: 20px;
+      border-bottom: 3px solid #9b59b6;
+      padding-bottom: 10px;
+    }
+
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
+
+    .related-card {
+      background: white;
+      border-radius: 15px;
+      padding: 20px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+      border: 1px solid #e0e0e0;
+    }
+
+    .related-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    .related-card h3 {
+      color: #2c3e50;
+      margin-bottom: 10px;
+      font-size: 1.1rem;
+    }
+
+    .related-card a {
+      color: #9b59b6;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+
+    .related-card a:hover {
+      color: #8e44ad;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        padding: 15px;
+      }
+
+      h1 {
+        font-size: 1.8rem;
+      }
+
+      .related-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <a href="./index.html" class="back-link">← 西野先生の動画一覧に戻る</a>
+      <h1>【元介護士の現役エンジニア西野が語る】 介護士だけは絶対にやめとけ！プログラミングにしとけ</h1>
+      <div class="author-info">
+        <span class="author-badge">西野先生</span>
+        <span style="color: #7f8c8d;">元介護士の現役エンジニア</span>
+      </div>
+    </header>
+
+    <div class="video-section">
+      <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/475ly5zU7ng?si=Y0dYHcq0S3h0xtEo" title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+    </div>
+
+    <div class="points-section">
+      <h2 class="points-title">🎯 この動画のポイント</h2>
+      <ul class="points-list">
+        <li>元介護士の西野先生が語る介護業界の現実と課題</li>
+        <li>介護士からエンジニアへの転身の具体的なメリットを解説</li>
+        <li>実際の経験に基づく転職のタイミングと準備方法を紹介</li>
+        <li>プログラミング学習による収入アップと働き方の改善</li>
+        <li>介護士のスキルを活かしたエンジニア転身の戦略</li>
+      </ul>
+    </div>
+
+    <div class="transcript-section">
+      <h2 class="transcript-title">📝 動画の文字起こし</h2>
+      <div class="transcript-content">
+        <p><strong>西野先生：</strong>こんにちは、元介護士の現役エンジニア、西野です。今日は、介護士として働いていた経験を踏まえて、なぜ介護士をやめてプログラミングに転向するべきなのかについてお話しします。
+        </p>
+
+        <p>まず、私が介護士をやめた理由についてお話しします。介護士として3年間働いていましたが、以下のような問題に直面しました。</p>
+
+        <p><strong>1. 身体的・精神的負担の大きさ</strong><br>
+          介護士の仕事は、24時間体制での勤務や夜勤が多く、身体的に非常に負担が大きいです。また、利用者の命を預かる責任の重さから、精神的にも大きなストレスを感じていました。</p>
+
+        <p><strong>2. 収入の限界</strong><br>
+          介護士の給料は、責任の重さに比べて低いのが現実です。経験を積んでも、大幅な収入アップは期待できません。特に、夜勤手当を除いた基本給は非常に低いです。</p>
+
+        <p><strong>3. キャリアアップの困難さ</strong><br>
+          介護士としてのキャリアアップは、主に管理職への昇進しかありません。しかし、管理職のポストは限られており、多くの人が同じ職位で働き続けることになります。</p>
+
+        <p><strong>4. 社会的地位の低さ</strong><br>
+          介護士は社会的に重要な仕事にも関わらず、社会的地位が低く見られがちです。これは、給料の低さや労働環境の厳しさが原因の一つです。</p>
+
+        <p><strong>プログラミングへの転身のメリット</strong></p>
+
+        <p>介護士からプログラミングに転身することで、以下のようなメリットがあります：</p>
+
+        <p><strong>1. 収入の大幅アップ</strong><br>
+          プログラマーの平均年収は、介護士の約1.5〜2倍です。経験を積めば、さらに高収入を目指すことができます。</p>
+
+        <p><strong>2. 働き方の自由度向上</strong><br>
+          プログラミングは、リモートワークやフリーランスとして働くことが可能です。時間や場所に縛られない働き方ができます。</p>
+
+        <p><strong>3. 継続的なスキルアップ</strong><br>
+          技術の進歩が早いIT業界では、常に新しい技術を学ぶ機会があります。これにより、キャリアの成長が期待できます。</p>
+
+        <p><strong>4. 社会的需要の高さ</strong><br>
+          プログラマーの需要は年々高まっており、将来性のある職業です。特に、AIやWeb開発分野での需要は急増しています。</p>
+
+        <p><strong>介護士のスキルを活かした転身戦略</strong></p>
+
+        <p>介護士として身につけたスキルは、プログラミングでも活かすことができます：</p>
+
+        <p><strong>1. コミュニケーション能力</strong><br>
+          介護士として培ったコミュニケーション能力は、クライアントとの打ち合わせやチーム開発で非常に役立ちます。</p>
+
+        <p><strong>2. 問題解決能力</strong><br>
+          介護現場での臨機応変な対応力は、プログラミングでのバグ修正やトラブルシューティングに活かせます。</p>
+
+        <p><strong>3. 責任感と細やかな配慮</strong><br>
+          利用者の命を預かる責任感は、システムの品質管理やセキュリティ意識の向上につながります。</p>
+
+        <p><strong>転職のタイミングと準備</strong></p>
+
+        <p>介護士からプログラミングへの転職は、以下のタイミングで行うことをお勧めします：</p>
+
+        <p>1. <strong>基礎スキルの習得後</strong><br>
+          プログラミングの基礎をしっかりと身につけてから転職活動を始めましょう。</p>
+
+        <p>2. <strong>ポートフォリオの作成後</strong><br>
+          実際に作った作品を見せることで、スキルをアピールできます。</p>
+
+        <p>3. <strong>経済的余裕がある時期</strong><br>
+          転職活動中は収入が不安定になる可能性があるため、ある程度の貯蓄がある時期に転職しましょう。</p>
+
+        <p>介護士として働いている方々は、本当に大切な仕事をされています。しかし、自分自身の将来を考えるなら、プログラミングへの転身を強くお勧めします。</p>
+
+        <p>次回は、具体的な学習方法と転職の準備について詳しく解説します。お楽しみに！</p>
+      </div>
+    </div>
+
+    <div class="related-videos">
+      <h2 class="related-title">📚 関連動画</h2>
+      <div class="related-grid">
+        <div class="related-card">
+          <h3>転職したいならプログラミングをやれ！【元介護士の現役エンジニア西野が語る】</h3>
+          <a href="tensyoku_programing.html">詳細を見る →</a>
+        </div>
+        <div class="related-card">
+          <h3>なぜプログラミングを学習すれば半年で簡単に稼げるリモートワーカーになれるのか？</h3>
+          <a href="naze_hantoshide_kasegeru_programing.html">詳細を見る →</a>
+        </div>
+        <div class="related-card">
+          <h3>【97%驚愕】プログラミング思考で"やりたい"を秒速発見</h3>
+          <a href="yaritaikoto_byousoku.html">詳細を見る →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

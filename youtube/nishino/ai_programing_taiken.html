@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>【初心者必見】AIプログラミング体験 - 西野先生</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #9b59b6 0%, #8e44ad 100%);
+      min-height: 100vh;
+      color: #333;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    header {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 30px;
+      margin-bottom: 30px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    }
+
+    .back-link {
+      display: inline-block;
+      color: #9b59b6;
+      text-decoration: none;
+      font-weight: 600;
+      margin-bottom: 20px;
+      transition: color 0.3s ease;
+    }
+
+    .back-link:hover {
+      color: #8e44ad;
+    }
+
+    h1 {
+      color: #2c3e50;
+      font-size: 2rem;
+      margin-bottom: 15px;
+      line-height: 1.3;
+    }
+
+    .video-meta {
+      color: #7f8c8d;
+      font-size: 1.1rem;
+    }
+
+    .instructor-badge {
+      display: inline-block;
+      background: linear-gradient(45deg, #9b59b6, #8e44ad);
+      color: white;
+      padding: 4px 12px;
+      border-radius: 15px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin-left: 10px;
+    }
+
+    .video-section {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 30px;
+      margin-bottom: 30px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    }
+
+    .video-container {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%;
+      border-radius: 15px;
+      overflow: hidden;
+    }
+
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .key-points {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 30px;
+      margin-bottom: 30px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    }
+
+    .section-title {
+      color: #2c3e50;
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .key-points-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
+
+    .key-point-card {
+      background: linear-gradient(135deg, #9b59b6, #8e44ad);
+      color: white;
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(155, 89, 182, 0.3);
+    }
+
+    .key-point-card h4 {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+    }
+
+    .transcript {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 30px;
+      margin-bottom: 30px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    }
+
+    .transcript-content {
+      line-height: 1.8;
+      color: #2c3e50;
+    }
+
+    .transcript-content h3 {
+      color: #9b59b6;
+      margin: 25px 0 15px 0;
+      font-size: 1.3rem;
+    }
+
+    .transcript-content p {
+      margin-bottom: 15px;
+    }
+
+    .transcript-content strong {
+      color: #9b59b6;
+    }
+
+    .related-videos {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 30px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    }
+
+    .related-videos-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
+
+    .related-video-card {
+      background: white;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .related-video-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .related-video-thumbnail {
+      width: 100%;
+      height: 180px;
+      position: relative;
+    }
+
+    .related-video-thumbnail iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .related-video-info {
+      padding: 20px;
+    }
+
+    .related-video-title {
+      color: #2c3e50;
+      text-decoration: none;
+      font-weight: 600;
+      line-height: 1.4;
+      display: block;
+      transition: color 0.3s ease;
+    }
+
+    .related-video-title:hover {
+      color: #9b59b6;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        padding: 10px;
+      }
+
+      h1 {
+        font-size: 1.5rem;
+      }
+
+      .key-points-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .related-videos-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <a href="../nishino/index.html" class="back-link">← 西野動画集に戻る</a>
+      <h1>【初心者必見】AIプログラミング体験</h1>
+      <div class="video-meta">
+        講師: 西野先生 <span class="instructor-badge">西野</span>
+      </div>
+    </header>
+
+    <div class="video-section">
+      <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/4nvk76SP_Zk?si=H6zjqjSt7NA0jDbm" title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+    </div>
+
+    <div class="key-points">
+      <h2 class="section-title">🎯 この動画のポイント</h2>
+      <div class="key-points-grid">
+        <div class="key-point-card">
+          <h4>初心者向け体験</h4>
+          <p>プログラミング初心者でもAIを活用すれば、実際にアプリやゲームを作れることを体験形式で紹介</p>
+        </div>
+        <div class="key-point-card">
+          <h4>AI活用の実践</h4>
+          <p>実際にAIツールを使ってプログラミングを行い、その効果と可能性を実証</p>
+        </div>
+        <div class="key-point-card">
+          <h4>学習方法の提案</h4>
+          <p>初心者でも効率的にプログラミングを学べる方法と、AI活用のコツを詳しく解説</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="transcript">
+      <h2 class="section-title">📝 動画の文字起こし</h2>
+      <div class="transcript-content">
+        <h3>【導入】AIプログラミング体験の目的</h3>
+        <p>こんにちは、西野です。今回は初心者の方に向けて、AIを活用したプログラミング体験をお届けします。</p>
+
+        <p>「プログラミングって難しそう」「AIを使えば本当にできるの？」という疑問にお答えするため、実際に体験していただきます。</p>
+
+        <h3>【体験の流れ】段階的な学習</h3>
+        <p>今回の体験では、以下の流れで進めていきます：</p>
+
+        <p><strong>1. 環境構築</strong><br>
+          AIプログラミングに必要なツールの準備</p>
+
+        <p><strong>2. 簡単なプログラム作成</strong><br>
+          AIの助けを借りて簡単なプログラムを作成</p>
+
+        <p><strong>3. アプリ開発体験</strong><br>
+          実際に小さなアプリを作ってみる</p>
+
+        <p><strong>4. ゲーム開発体験</strong><br>
+          簡単なゲームを作ってみる</p>
+
+        <h3>【環境構築】必要なツールの準備</h3>
+        <p>まず、AIプログラミングに必要なツールを準備します：</p>
+
+        <p><strong>1. ChatGPT</strong><br>
+          コード生成とデバッグ支援に使用</p>
+
+        <p><strong>2. GitHub Copilot</strong><br>
+          リアルタイムでのコード補完</p>
+
+        <p><strong>3. Replit</strong><br>
+          ブラウザ上で完結する開発環境</p>
+
+        <p><strong>4. Visual Studio Code</strong><br>
+          コードエディタ（オプション）</p>
+
+        <h3>【体験1】簡単なプログラム作成</h3>
+        <p>まずは簡単なプログラムから始めましょう。「Hello World」を表示するプログラムを作成します。</p>
+
+        <p>AIに「PythonでHello Worldを表示するプログラムを作って」と伝えるだけで、適切なコードを生成してくれました。</p>
+
+        <p>驚いたのは、AIがコードだけでなく、実行方法や説明まで提供してくれたことです。これなら初心者でも安心して始められます。</p>
+
+        <h3>【体験2】計算プログラムの作成</h3>
+        <p>次に、少し複雑な計算プログラムを作成してみました。「簡単な計算機を作って」とAIに伝えると、以下の機能を持つプログラムを提案してくれました：</p>
+
+        <p><strong>1. 四則演算</strong><br>
+          足し算、引き算、掛け算、割り算</p>
+
+        <p><strong>2. ユーザー入力</strong><br>
+          キーボードからの入力を受け付け</p>
+
+        <p><strong>3. エラーハンドリング</strong><br>
+          不正な入力に対するエラー処理</p>
+
+        <p><strong>4. ループ機能</strong><br>
+          繰り返し計算ができる機能</p>
+
+        <h3>【体験3】簡単なアプリ開発</h3>
+        <p>次に、Webアプリの開発に挑戦してみました。「簡単なToDoリストアプリを作って」とAIに伝えると、以下の機能を持つアプリを提案してくれました：</p>
+
+        <p><strong>1. タスク追加</strong><br>
+          新しいタスクを追加する機能</p>
+
+        <p><strong>2. タスク削除</strong><br>
+          完了したタスクを削除する機能</p>
+
+        <p><strong>3. タスク編集</strong><br>
+          既存のタスクを編集する機能</p>
+
+        <p><strong>4. ローカルストレージ</strong><br>
+          タスクをブラウザに保存する機能</p>
+
+        <h3>【体験4】簡単なゲーム開発</h3>
+        <p>最後に、簡単なゲームの開発に挑戦してみました。「簡単な数当てゲームを作って」とAIに伝えると、以下の機能を持つゲームを提案してくれました：</p>
+
+        <p><strong>1. ランダム数生成</strong><br>
+          1から100までのランダムな数を生成</p>
+
+        <p><strong>2. ユーザー入力</strong><br>
+          プレイヤーが数を予想して入力</p>
+
+        <p><strong>3. ヒント機能</strong><br>
+          正解より大きいか小さいかのヒント</p>
+
+        <p><strong>4. スコア機能</strong><br>
+          何回で正解したかを記録</p>
+
+        <h3>【考察】AIプログラミングの効果</h3>
+        <p>この体験を通じて、AIプログラミングの効果を実感しました：</p>
+
+        <p><strong>1. 学習時間の短縮</strong><br>
+          従来なら数週間かかる学習が数時間で完了</p>
+
+        <p><strong>2. 理解の促進</strong><br>
+          AIの説明により、概念の理解が深まる</p>
+
+        <p><strong>3. 実践の促進</strong><br>
+          すぐに実践できるため、学習意欲が高まる</p>
+
+        <p><strong>4. エラーの削減</strong><br>
+          AIが生成するコードは予想以上に安定</p>
+
+        <h3>【初心者へのアドバイス】</h3>
+        <p>プログラミング初心者の方には、以下のステップをお勧めします：</p>
+
+        <p><strong>1. 基礎を学ぶ</strong><br>
+          まずは基本的なプログラミングの概念を理解しましょう。</p>
+
+        <p><strong>2. AIを活用する</strong><br>
+          基礎ができたら、積極的にAIを活用してください。</p>
+
+        <p><strong>3. 実践を重視</strong><br>
+          理論だけでなく、実際にプロジェクトを作って経験を積みましょう。</p>
+
+        <p><strong>4. 継続的な学習</strong><br>
+          新しい技術を学び続けることが重要です。</p>
+
+        <h3>【まとめ】AIプログラミングの未来</h3>
+        <p>AIプログラミングは、プログラミング学習をより楽しく、効率的にする素晴らしいツールです。ただし、重要なのはAIを「パートナー」として活用することです。</p>
+
+        <p>AIは人間の創造性をサポートするものであり、完全に人間を置き換えるものではありません。むしろ、人間の能力を拡張し、より創造的な仕事に集中できるようにするものだと考えています。</p>
+
+        <p>ぜひ、この機会にAIを活用したプログラミングに挑戦してみてください。きっと、新しい発見があるはずです。</p>
+      </div>
+    </div>
+
+    <div class="related-videos">
+      <h2 class="section-title">📚 関連動画</h2>
+      <div class="related-videos-grid">
+        <div class="related-video-card">
+          <div class="related-video-thumbnail">
+            <iframe src="https://www.youtube.com/embed/PmKWJKmQFxQ?si=KdFF_U8aoIfKrlBo" title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+          <div class="related-video-info">
+            <a href="insta_app.html" class="related-video-title">
+              【ChatGPTでプログラミング】現役エンジニアがインスタ風アプリを作ってみた結果
+            </a>
+          </div>
+        </div>
+
+        <div class="related-video-card">
+          <div class="related-video-thumbnail">
+            <iframe src="https://www.youtube.com/embed/PmKWJKmQFxQ?si=KdFF_U8aoIfKrlBo" title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+          <div class="related-video-info">
+            <a href="spra_app.html" class="related-video-title">
+              【スウィッチ2対抗】AIプログラミングでスプラトゥーン風ゲームを作ってみた
+            </a>
+          </div>
+        </div>
+
+        <div class="related-video-card">
+          <div class="related-video-thumbnail">
+            <iframe src="https://www.youtube.com/embed/ef9W6rRuU2Y?si=8JiM8ewVl1WVdDcO" title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+          <div class="related-video-info">
+            <a href="line_app.html" class="related-video-title">
+              【バカでもできるAIプログラミング】元偏差値35のエンジニアがLINE風アプリを作ってみた
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

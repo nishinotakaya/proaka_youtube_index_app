@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>【2025年版】独学で挫折しないプログラミング学習法 - プロアカYouTube紹介</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+      min-height: 100vh;
+      color: #333;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .back-link {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.9);
+      color: #e74c3c;
+      padding: 10px 20px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: 600;
+      margin-bottom: 20px;
+      transition: all 0.3s ease;
+    }
+
+    .back-link:hover {
+      background: white;
+      transform: translateY(-2px);
+    }
+
+    .video-detail {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 30px;
+      margin-bottom: 30px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    }
+
+    .video-title {
+      font-size: 1.8rem;
+      color: #2c3e50;
+      margin-bottom: 20px;
+      text-align: center;
+      border-bottom: 3px solid #e74c3c;
+      padding-bottom: 15px;
+    }
+
+    .video-container {
+      position: relative;
+      width: 100%;
+      height: 0;
+      padding-bottom: 56.25%;
+      margin-bottom: 30px;
+    }
+
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 15px;
+    }
+
+    .author-info {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 30px;
+      padding: 20px;
+      background: linear-gradient(45deg, #e74c3c, #c0392b);
+      border-radius: 15px;
+      color: white;
+    }
+
+    .author-avatar {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: white;
+      margin-right: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #e74c3c;
+    }
+
+    .author-details h3 {
+      font-size: 1.3rem;
+      margin-bottom: 5px;
+    }
+
+    .author-details p {
+      opacity: 0.9;
+      font-size: 0.9rem;
+    }
+
+    .content-section {
+      margin-bottom: 30px;
+    }
+
+    .section-title {
+      font-size: 1.4rem;
+      color: #2c3e50;
+      margin-bottom: 15px;
+      padding-left: 15px;
+      border-left: 4px solid #e74c3c;
+    }
+
+    .points-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .points-list li {
+      background: #f8f9fa;
+      margin-bottom: 10px;
+      padding: 15px;
+      border-radius: 10px;
+      border-left: 4px solid #e74c3c;
+      position: relative;
+    }
+
+    .points-list li::before {
+      content: "💡";
+      position: absolute;
+      left: -10px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: #e74c3c;
+      color: white;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+    }
+
+    .transcript {
+      background: #f8f9fa;
+      padding: 20px;
+      border-radius: 15px;
+      line-height: 1.6;
+      max-height: 300px;
+      overflow-y: auto;
+    }
+
+    .related-videos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .related-video {
+      background: white;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    .related-video:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    .related-video a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .related-video-thumbnail {
+      width: 100%;
+      height: 150px;
+      background: #f0f0f0;
+      position: relative;
+    }
+
+    .related-video-thumbnail iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .related-video-info {
+      padding: 15px;
+    }
+
+    .related-video-title {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #2c3e50;
+      margin-bottom: 8px;
+      line-height: 1.4;
+    }
+
+    .related-video-author {
+      color: #7f8c8d;
+      font-size: 0.8rem;
+    }
+
+    @media (max-width: 768px) {
+      .video-title {
+        font-size: 1.4rem;
+      }
+
+      .author-info {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .author-avatar {
+        margin-right: 0;
+        margin-bottom: 10px;
+      }
+
+      .related-videos {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <a href="../../top.html" class="back-link">← トップページに戻る</a>
+
+    <div class="video-detail">
+      <h1 class="video-title">【2025年版】独学で挫折しないプログラミング学習法</h1>
+
+      <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/G_P9j2rCIUE?si=aqBKi8rec8rF__Pw" title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+
+      <div class="author-info">
+        <div class="author-avatar">加</div>
+        <div class="author-details">
+          <h3>加藤先生</h3>
+          <p>現役エンジニア・プログラミング講師</p>
+        </div>
+      </div>
+
+      <div class="content-section">
+        <h2 class="section-title">🎯 この動画のポイント</h2>
+        <ul class="points-list">
+          <li>独学でプログラミングを学ぶ際の挫折ポイント</li>
+          <li>効率的な学習計画の立て方</li>
+          <li>モチベーションを維持する方法</li>
+          <li>実践的な学習ステップ</li>
+          <li>挫折しないための環境作り</li>
+        </ul>
+      </div>
+
+      <div class="content-section">
+        <h2 class="section-title">📝 動画の文字起こし</h2>
+        <div class="transcript">
+          プログラミングの独学で挫折してしまう人が多い理由は、学習計画が曖昧だったり、
+          モチベーションが維持できなかったりすることが原因です。
+
+          まず、明確な目標設定が重要です。「Webアプリを作りたい」「転職したい」など、
+          具体的な目標を持つことで学習の方向性が明確になります。
+
+          次に、小さな成功体験を積み重ねることが大切です。最初から難しいプロジェクトに
+          挑戦するのではなく、簡単なものから始めて、少しずつレベルアップしていきましょう。
+
+          学習環境も重要です。集中できる場所を確保し、学習時間を固定することで、
+          習慣化しやすくなります。
+
+          また、コミュニティに参加することもおすすめです。同じ目標を持つ仲間と
+          交流することで、モチベーションを維持できます。
+
+          最後に、完璧を求めすぎないことです。プログラミングは試行錯誤の連続なので、
+          失敗を恐れずにチャレンジし続けることが大切です。
+        </div>
+      </div>
+
+      <div class="content-section">
+        <h2 class="section-title">🔗 関連動画</h2>
+        <div class="related-videos">
+          <div class="related-video">
+            <a href="pc_osusume.html">
+              <div class="related-video-thumbnail">
+                <iframe src="https://www.youtube.com/embed/0T6y5QIv5-Y?si=7fZNOQGHJ899dLkb" title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+              </div>
+              <div class="related-video-info">
+                <div class="related-video-title">【プログラミング学習用PCは何がいいですか？】パソコン買うなら絶対知っておきたい4つのポイント【7万円以下】</div>
+                <div class="related-video-author">講師: 加藤先生</div>
+              </div>
+            </a>
+          </div>
+
+          <div class="related-video">
+            <a href="90_zasetsu_proguraming_muitenai_hito.html">
+              <div class="related-video-thumbnail">
+                <iframe src="https://www.youtube.com/embed/Tl4YioK1ljo?si=QleoDXYlNVmROKwG" title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+              </div>
+              <div class="related-video-info">
+                <div class="related-video-title">【警告】90％挫折！？プログラミングに向いていない人の特徴5選</div>
+                <div class="related-video-author">講師: 加藤先生</div>
+              </div>
+            </a>
+          </div>
+
+          <div class="related-video">
+            <a href="tyusotsu_programing.html">
+              <div class="related-video-thumbnail">
+                <iframe src="https://www.youtube.com/embed/jCosZGP2mGY?si=Z9cY0PKznlhEPFH9" title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+              </div>
+              <div class="related-video-info">
+                <div class="related-video-title">【学歴・経歴不問】中卒からエンジニアになるプログラミング学習法</div>
+                <div class="related-video-author">講師: 加藤先生</div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

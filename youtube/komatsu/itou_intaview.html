@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>【月収45万円】社長秘書からエンジニア女子に転職した伊藤さん - 小松先生</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+      min-height: 100vh;
+      color: #333;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    header {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 30px;
+      margin-bottom: 30px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-bottom: 20px;
+      color: #2980b9;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 8px 16px;
+      border: 2px solid #2980b9;
+      border-radius: 20px;
+      transition: all 0.3s ease;
+    }
+
+    .back-link:hover {
+      background: #2980b9;
+      color: white;
+    }
+
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+      font-size: 2.2rem;
+      margin-bottom: 15px;
+      line-height: 1.3;
+    }
+
+    .video-meta {
+      text-align: center;
+      color: #7f8c8d;
+      font-size: 1rem;
+      margin-bottom: 20px;
+    }
+
+    .instructor-badge {
+      display: inline-block;
+      background: linear-gradient(45deg, #3498db, #2980b9);
+      color: white;
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-left: 10px;
+    }
+
+    .video-section {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 30px;
+      margin-bottom: 30px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    }
+
+    .video-container {
+      position: relative;
+      width: 100%;
+      max-width: 800px;
+      margin: 0 auto;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .video-container iframe {
+      width: 100%;
+      height: 450px;
+      border: none;
+    }
+
+    .transcript-section {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 30px;
+      margin-bottom: 30px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    }
+
+    .section-title {
+      font-size: 1.8rem;
+      color: #2c3e50;
+      margin-bottom: 20px;
+      text-align: center;
+      border-bottom: 3px solid #3498db;
+      padding-bottom: 10px;
+    }
+
+    .transcript-content {
+      background: #f8f9fa;
+      border-radius: 15px;
+      padding: 25px;
+      line-height: 1.8;
+      font-size: 1rem;
+      color: #2c3e50;
+    }
+
+    .transcript-content h3 {
+      color: #3498db;
+      margin: 20px 0 10px 0;
+      font-size: 1.3rem;
+    }
+
+    .transcript-content p {
+      margin-bottom: 15px;
+    }
+
+    .transcript-content ul {
+      margin: 15px 0;
+      padding-left: 20px;
+    }
+
+    .transcript-content li {
+      margin-bottom: 8px;
+    }
+
+    .key-points {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 30px;
+      margin-bottom: 30px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    }
+
+    .key-points-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .key-point-card {
+      background: linear-gradient(135deg, #3498db, #2980b9);
+      color: white;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+    }
+
+    .key-point-card h4 {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+      border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+      padding-bottom: 8px;
+    }
+
+    .related-videos {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 30px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    }
+
+    .related-videos-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .related-video-card {
+      background: white;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    .related-video-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    .related-video-thumbnail {
+      width: 100%;
+      height: 150px;
+      background: #f0f0f0;
+    }
+
+    .related-video-thumbnail iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .related-video-info {
+      padding: 15px;
+    }
+
+    .related-video-title {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #2c3e50;
+      text-decoration: none;
+      display: block;
+      margin-bottom: 8px;
+      line-height: 1.4;
+    }
+
+    .related-video-title:hover {
+      color: #3498db;
+    }
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 1.8rem;
+      }
+
+      .video-container iframe {
+        height: 250px;
+      }
+
+      .key-points-grid,
+      .related-videos-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <a href="../../top.html" class="back-link">← 一覧に戻る</a>
+      <h1>【月収45万円】社長秘書からエンジニア女子に転職した伊藤さん</h1>
+      <div class="video-meta">
+        講師: 小松先生 <span class="instructor-badge">小松</span>
+      </div>
+    </header>
+
+    <div class="video-section">
+      <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/yAgm3FY5_xM?si=x6GD_dSc01949gyK" title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+    </div>
+
+    <div class="key-points">
+      <h2 class="section-title">🎯 この動画のポイント</h2>
+      <div class="key-points-grid">
+        <div class="key-point-card">
+          <h4>事務職からの転職成功</h4>
+          <p>社長秘書からエンジニアに転職し、月収45万円を実現した女性の体験談</p>
+        </div>
+        <div class="key-point-card">
+          <h4>事務スキルの活用法</h4>
+          <p>事務職で培ったスキルをエンジニア職でどのように活かしたかを解説</p>
+        </div>
+        <div class="key-point-card">
+          <h4>女性エンジニアのキャリア</h4>
+          <p>女性がIT業界で活躍するための具体的なアドバイスと戦略</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="transcript-section">
+      <h2 class="section-title">📝 動画内容の文字起こし</h2>
+      <div class="transcript-content">
+        <h3>【序章】社長秘書からエンジニアへの転職のきっかけ</h3>
+        <p>こんにちは、小松です。今日は社長秘書からエンジニアに転職し、月収45万円を実現した伊藤さんの体験談をお話しします。</p>
+
+        <p>伊藤さんは、事務職としての経験を活かしながら、見事にエンジニアとしてのキャリアを築かれました。</p>
+
+        <h3>【転職前の状況】</h3>
+        <p>社長秘書時代は、月収が約25万円程度でした。事務職として働いていましたが、キャリアの幅を広げたいと考えていました。</p>
+        <ul>
+          <li>月収：約25万円</li>
+          <li>職種：社長秘書</li>
+          <li>勤務時間：定時勤務だが残業も多い</li>
+          <li>将来への不安：事務職のキャリアパスが限定的</li>
+          <li>スキル：事務処理、コミュニケーション、調整能力</li>
+        </ul>
+
+        <h3>【転職を決意した理由】</h3>
+        <p>転職を決意した理由は、以下のようなものでした：</p>
+        <ul>
+          <li>IT業界の将来性：技術の進歩により需要が高まっている</li>
+          <li>リモートワークの可能性：働き方の自由度が高い</li>
+          <li>給与の向上：スキル次第で大幅な収入アップが可能</li>
+          <li>キャリアの多様性：様々な業界で活躍できる</li>
+          <li>事務スキルの活かし方：コミュニケーション能力をIT業界で活用</li>
+        </ul>
+
+        <h3>【学習方法と期間】</h3>
+        <p>プログラミング学習は、以下のような方法で進めました：</p>
+        <ul>
+          <li>学習期間：約7ヶ月</li>
+          <li>学習時間：平日2時間、休日5時間</li>
+          <li>学習内容：HTML/CSS、JavaScript、React、Node.js</li>
+          <li>学習方法：オンライン教材、実践的なプロジェクト作成</li>
+          <li>事務スキルの活用：効率的な学習計画とスケジュール管理</li>
+        </ul>
+
+        <h3>【学習の苦労と克服方法】</h3>
+        <p>学習中は様々な困難がありましたが、以下の方法で克服しました：</p>
+        <ul>
+          <li>基礎の徹底：HTML/CSS/JavaScriptの基礎を何度も復習</li>
+          <li>実践重視：理論だけでなく、実際にアプリを作り続ける</li>
+          <li>コミュニティ参加：女性エンジニアの勉強会に積極的に参加</li>
+          <li>メンター探し：経験豊富な女性エンジニアに相談</li>
+          <li>継続的な学習：毎日少しずつでも学習を続ける</li>
+          <li>事務スキルの活用：効率的な学習計画とスケジュール管理</li>
+        </ul>
+
+        <h3>【転職活動のポイント】</h3>
+        <p>転職活動では、以下のポイントが重要でした：</p>
+        <ul>
+          <li>ポートフォリオの充実：事務関連のアプリを実際に作成</li>
+          <li>事務スキルのアピール：コミュニケーション能力と調整能力</li>
+          <li>ネットワーキング：女性エンジニアコミュニティでの情報収集</li>
+          <li>実務経験の積み重ね：フリーランス案件で経験を積む</li>
+          <li>女性ならではの強み：細やかな配慮とコミュニケーション能力</li>
+        </ul>
+
+        <h3>【転職後の変化】</h3>
+        <p>エンジニア転職後は、以下のような変化がありました：</p>
+        <ul>
+          <li>月収：約45万円（1.8倍の増加）</li>
+          <li>働き方：リモートワーク中心で時間の自由度が大幅に向上</li>
+          <li>キャリア：技術の進歩に合わせてスキルアップが可能</li>
+          <li>将来性：国内外での活躍の場が広がった</li>
+          <li>自信：事務スキルを活かして活躍できることを実感</li>
+          <li>ワークライフバランス：子育てとの両立が可能になった</li>
+        </ul>
+
+        <h3>【女性エンジニアへのアドバイス】</h3>
+        <p>事務職からエンジニアへの転職を考えている女性へのアドバイス：</p>
+        <ul>
+          <li>基礎をしっかり学ぶ：HTML/CSS/JavaScriptの基礎が重要</li>
+          <li>実践的な学習：理論だけでなく、実際にアプリを作る</li>
+          <li>女性コミュニティに参加：同じ志を持つ仲間を見つける</li>
+          <li>継続的な学習：技術は日々進歩するため、学習を止めない</li>
+          <li>事務スキルを活かす：コミュニケーション能力と調整能力</li>
+          <li>女性ならではの強みを活かす：細やかな配慮とコミュニケーション能力</li>
+        </ul>
+
+        <h3>【まとめ】事務職からエンジニアへの転職</h3>
+        <p>事務職からエンジニアへの転職は、決して不可能ではありません。適切な学習方法と継続的な努力があれば、誰でも実現可能です。</p>
+
+        <p>重要なのは、諦めずに学習を続けることと、既存の事務スキルを活かすことです。IT業界は男性中心のイメージがありますが、女性の視点や感性が求められる場面も多くあります。</p>
+      </div>
+    </div>
+
+    <div class="related-videos">
+      <h2 class="section-title">📚 関連動画</h2>
+      <div class="related-videos-grid">
+        <div class="related-video-card">
+          <div class="related-video-thumbnail">
+            <iframe src="https://www.youtube.com/embed/TAM-o213zTo?si=GoNF3J5MRpiC2YyO" title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+          <div class="related-video-info">
+            <a href="makino_intaview.html" class="related-video-title">
+              【月収20→50万】30代女性エステティシャンがエンジニアに転職した結果
+            </a>
+          </div>
+        </div>
+
+        <div class="related-video-card">
+          <div class="related-video-thumbnail">
+            <iframe src="https://www.youtube.com/embed/ief17KqCDQs?si=QFx9eeSepUTTyFOO" title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+          <div class="related-video-info">
+            <a href="kousyounyuu_teisyuunyuu_programing.html" class="related-video-title">
+              プログラミング習得者の高収入と低収入の違い5選
+            </a>
+          </div>
+        </div>
+
+        <div class="related-video-card">
+          <div class="related-video-thumbnail">
+            <iframe src="https://www.youtube.com/embed/iKiqL-Kur4o?si=2dKovTEG0YPiHWiD" title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+          <div class="related-video-info">
+            <a href="2025_programing_load_map.html" class="related-video-title">
+              【2025年最新版】プログラミング未経験からAI活用で最短最速でプログラマになるロードマップ
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

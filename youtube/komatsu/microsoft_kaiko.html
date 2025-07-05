@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Microsoft解雇の真実 - プロアカYouTube紹介</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+      min-height: 100vh;
+      color: #333;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .header {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 30px;
+      margin-bottom: 30px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    .header h1 {
+      color: #2c3e50;
+      font-size: 2.2rem;
+      margin-bottom: 10px;
+      background: linear-gradient(45deg, #3498db, #2980b9);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .header .subtitle {
+      color: #7f8c8d;
+      font-size: 1.1rem;
+      margin-bottom: 20px;
+    }
+
+    .back-link {
+      display: inline-block;
+      background: linear-gradient(45deg, #3498db, #2980b9);
+      color: white;
+      padding: 12px 24px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+    }
+
+    .back-link:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(52, 152, 219, 0.4);
+    }
+
+    .video-section {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 30px;
+      margin-bottom: 30px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    }
+
+    .video-container {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .points-section {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 30px;
+      margin-bottom: 30px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    }
+
+    .points-section h2 {
+      color: #2c3e50;
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      text-align: center;
+      border-bottom: 3px solid #3498db;
+      padding-bottom: 10px;
+    }
+
+    .points-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .points-list li {
+      background: linear-gradient(45deg, #f8f9fa, #e9ecef);
+      margin-bottom: 15px;
+      padding: 20px;
+      border-radius: 15px;
+      border-left: 5px solid #3498db;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    .points-list li:hover {
+      transform: translateX(5px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .transcript-section {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 30px;
+      margin-bottom: 30px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    }
+
+    .transcript-section h2 {
+      color: #2c3e50;
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      text-align: center;
+      border-bottom: 3px solid #3498db;
+      padding-bottom: 10px;
+    }
+
+    .transcript-content {
+      background: #f8f9fa;
+      padding: 25px;
+      border-radius: 15px;
+      line-height: 1.8;
+      color: #2c3e50;
+    }
+
+    .related-videos {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 30px;
+      margin-bottom: 30px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    }
+
+    .related-videos h2 {
+      color: #2c3e50;
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      text-align: center;
+      border-bottom: 3px solid #3498db;
+      padding-bottom: 10px;
+    }
+
+    .videos-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
+
+    .video-card {
+      background: white;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+      border: 1px solid #e0e0e0;
+    }
+
+    .video-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    }
+
+    .video-thumbnail {
+      width: 100%;
+      height: 180px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .video-thumbnail iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .video-info {
+      padding: 20px;
+    }
+
+    .video-title {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #2c3e50;
+      margin-bottom: 10px;
+      line-height: 1.4;
+      text-decoration: none;
+      display: block;
+    }
+
+    .video-title:hover {
+      color: #3498db;
+    }
+
+    .video-author {
+      color: #7f8c8d;
+      font-size: 0.9rem;
+      margin-bottom: 15px;
+    }
+
+    .video-link {
+      display: inline-block;
+      background: linear-gradient(45deg, #3498db, #2980b9);
+      color: white;
+      padding: 8px 16px;
+      border-radius: 20px;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+
+    .video-link:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+    }
+
+    .author-badge {
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 15px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin-left: 10px;
+      background: linear-gradient(45deg, #3498db, #2980b9);
+      color: white;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        padding: 15px;
+      }
+
+      .header h1 {
+        font-size: 1.8rem;
+      }
+
+      .videos-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .points-list li {
+        padding: 15px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>Microsoft解雇の真実</h1>
+      <p class="subtitle">大手IT企業の解雇事情とエンジニアの現実</p>
+      <a href="../../top.html" class="back-link">← トップページに戻る</a>
+    </div>
+
+    <div class="video-section">
+      <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/microsoft_kaiko" title="YouTube video player" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+    </div>
+
+    <div class="points-section">
+      <h2>🎯 この動画のポイント</h2>
+      <ul class="points-list">
+        <li><strong>大手企業の解雇事情</strong><br>Microsoftなどの大手IT企業における解雇の実態と背景について解説。</li>
+        <li><strong>エンジニアの雇用不安</strong><br>技術者として働く上での雇用の不安定さと、その対策について考察。</li>
+        <li><strong>企業文化と働き方</strong><br>大手IT企業の企業文化と、エンジニアにとっての働きやすさについて分析。</li>
+        <li><strong>キャリア戦略</strong><br>大手企業で働くことのメリット・デメリットと、長期的なキャリア戦略を提案。</li>
+        <li><strong>業界の変化</strong><br>IT業界全体の雇用環境の変化と、エンジニアに求められる新しいスキルについて説明。</li>
+      </ul>
+    </div>
+
+    <div class="transcript-section">
+      <h2>📝 動画の文字起こし</h2>
+      <div class="transcript-content">
+        <p>Microsoftなどの大手IT企業における解雇の実態について解説した内容です。</p>
+
+        <p>大手IT企業は安定していると思われがちですが、実際には定期的な人員削減や組織再編が行われています。特に、経済状況の悪化や事業戦略の変更により、突然の解雇が発生することがあります。</p>
+
+        <p>エンジニアとして働く上で、雇用の不安定さは避けて通れない問題です。技術の進歩が速いIT業界では、常に新しいスキルを身につける必要があり、それができないと解雇の対象となる可能性があります。</p>
+
+        <p>大手IT企業の企業文化は、福利厚生が充実している一方で、競争が激しく、成果主義的な面があります。また、大規模な組織であるため、個人の裁量が限られる場合もあります。</p>
+
+        <p>キャリア戦略としては、大手企業で経験を積むことは価値がありますが、同時に独立したスキルを身につけることが重要です。フリーランスや起業の選択肢も視野に入れておくべきでしょう。</p>
+
+        <p>IT業界全体として、AI技術の進歩により雇用環境が大きく変化しています。従来のプログラミングスキルだけでなく、AI技術の理解や、新しい開発手法への対応が求められています。</p>
+
+        <p>エンジニアとして長期的に活躍するためには、技術的なスキルだけでなく、ビジネススキルやコミュニケーション能力も重要になります。また、常に学習を続ける姿勢が求められます。</p>
+      </div>
+    </div>
+
+    <div class="related-videos">
+      <h2>🔗 関連動画</h2>
+      <div class="videos-grid">
+        <div class="video-card">
+          <div class="video-thumbnail">
+            <iframe src="https://www.youtube.com/embed/ai_ennjinia_huyou" title="YouTube video player" frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+          <div class="video-info">
+            <a href="ai_ennjinia_huyou.html" class="video-title">
+              AIエンジニア不要論
+            </a>
+            <div class="video-author">
+              講師: 小松先生 <span class="author-badge">小松</span>
+            </div>
+            <a href="ai_ennjinia_huyou.html" class="video-link">詳細を見る</a>
+          </div>
+        </div>
+
+        <div class="video-card">
+          <div class="video-thumbnail">
+            <iframe src="https://www.youtube.com/embed/microsoft_kaiko" title="YouTube video player" frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+          <div class="video-info">
+            <a href="microsoft_kaiko.html" class="video-title">
+              Microsoft解雇の真実
+            </a>
+            <div class="video-author">
+              講師: 小松先生 <span class="author-badge">小松</span>
+            </div>
+            <a href="microsoft_kaiko.html" class="video-link">詳細を見る</a>
+          </div>
+        </div>
+
+        <div class="video-card">
+          <div class="video-thumbnail">
+            <iframe src="https://www.youtube.com/embed/komatsu_other_video" title="YouTube video player" frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+          <div class="video-info">
+            <a href="komatsu_other_video.html" class="video-title">
+              小松先生のその他の動画
+            </a>
+            <div class="video-author">
+              講師: 小松先生 <span class="author-badge">小松</span>
+            </div>
+            <a href="komatsu_other_video.html" class="video-link">詳細を見る</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

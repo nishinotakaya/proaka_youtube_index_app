@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>【エンジニア転職】人手不足なのに未経験お断りのIT業界のリアルを解説 - プロアカYouTube紹介</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+      min-height: 100vh;
+      color: #333;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .header {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 30px;
+      margin-bottom: 30px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    .header h1 {
+      color: #2c3e50;
+      font-size: 2.2rem;
+      margin-bottom: 10px;
+      background: linear-gradient(45deg, #e74c3c, #c0392b);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .header .subtitle {
+      color: #7f8c8d;
+      font-size: 1.1rem;
+      margin-bottom: 20px;
+    }
+
+    .back-link {
+      display: inline-block;
+      background: linear-gradient(45deg, #e74c3c, #c0392b);
+      color: white;
+      padding: 12px 24px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);
+    }
+
+    .back-link:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(231, 76, 60, 0.4);
+    }
+
+    .video-section {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 30px;
+      margin-bottom: 30px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    }
+
+    .video-container {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .points-section {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 30px;
+      margin-bottom: 30px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    }
+
+    .points-section h2 {
+      color: #2c3e50;
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      text-align: center;
+      border-bottom: 3px solid #e74c3c;
+      padding-bottom: 10px;
+    }
+
+    .points-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .points-list li {
+      background: linear-gradient(45deg, #f8f9fa, #e9ecef);
+      margin-bottom: 15px;
+      padding: 20px;
+      border-radius: 15px;
+      border-left: 5px solid #e74c3c;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    .points-list li:hover {
+      transform: translateX(5px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .transcript-section {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 30px;
+      margin-bottom: 30px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    }
+
+    .transcript-section h2 {
+      color: #2c3e50;
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      text-align: center;
+      border-bottom: 3px solid #e74c3c;
+      padding-bottom: 10px;
+    }
+
+    .transcript-content {
+      background: #f8f9fa;
+      padding: 25px;
+      border-radius: 15px;
+      line-height: 1.8;
+      color: #2c3e50;
+    }
+
+    .related-videos {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 30px;
+      margin-bottom: 30px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    }
+
+    .related-videos h2 {
+      color: #2c3e50;
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      text-align: center;
+      border-bottom: 3px solid #e74c3c;
+      padding-bottom: 10px;
+    }
+
+    .videos-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
+
+    .video-card {
+      background: white;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+      border: 1px solid #e0e0e0;
+    }
+
+    .video-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    }
+
+    .video-thumbnail {
+      width: 100%;
+      height: 180px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .video-thumbnail iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .video-info {
+      padding: 20px;
+    }
+
+    .video-title {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #2c3e50;
+      margin-bottom: 10px;
+      line-height: 1.4;
+      text-decoration: none;
+      display: block;
+    }
+
+    .video-title:hover {
+      color: #e74c3c;
+    }
+
+    .video-author {
+      color: #7f8c8d;
+      font-size: 0.9rem;
+      margin-bottom: 15px;
+    }
+
+    .video-link {
+      display: inline-block;
+      background: linear-gradient(45deg, #e74c3c, #c0392b);
+      color: white;
+      padding: 8px 16px;
+      border-radius: 20px;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+
+    .video-link:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);
+    }
+
+    .author-badge {
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 15px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin-left: 10px;
+      background: linear-gradient(45deg, #e74c3c, #c0392b);
+      color: white;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        padding: 15px;
+      }
+
+      .header h1 {
+        font-size: 1.8rem;
+      }
+
+      .videos-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .points-list li {
+        padding: 15px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>【エンジニア転職】人手不足なのに未経験お断りのIT業界のリアルを解説</h1>
+      <p class="subtitle">IT業界の人手不足と未経験者採用の現実を徹底解説</p>
+      <a href="../../top.html" class="back-link">← トップページに戻る</a>
+    </div>
+
+    <div class="video-section">
+      <div class="video-container">
+       <iframe width="560" height="315" src="https://www.youtube.com/embed/t8GTOfR97Zk?si=e6LW5xeE3kJxZjYM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+    </div>
+
+    <div class="points-section">
+      <h2>🎯 この動画のポイント</h2>
+      <ul class="points-list">
+        <li><strong>即戦力を求める傾向</strong><br>企業は短期的なプロジェクトにおいて即戦力となる人材を求めるため、未経験者には仕事を任せる余裕がない。</li>
+        <li><strong>教育コストの高さ</strong><br>未経験者を教育するためのコストが高く、短期間で育成できる保証がないため、採用リスクが高くなる。</li>
+        <li><strong>スキル評価の困難さ</strong><br>ポートフォリオや過去の学習歴だけでは判断しきれないため、実務経験が重視される。</li>
+        <li><strong>AI時代に求められるスキルの変化</strong><br>コーディングはAIによって補完されることが増え、メタスキルや問題解決能力がより重要になっている。</li>
+        <li><strong>フリーランスの選択肢</strong><br>学歴に自信がない場合、フリーランスとして実務経験を積む方が有利になる可能性がある。</li>
+      </ul>
+    </div>
+
+    <div class="transcript-section">
+      <h2>📝 動画の文字起こし</h2>
+      <div class="transcript-content">
+        <p>IT業界の人手不足に対して未経験者が転職できない現実を解説した内容です。</p>
+
+        <p>人手が足りているにもかかわらず、企業が未経験者を受け入れない理由は、即戦力を求める傾向や教育コストの高さ、スキル評価の困難さなどが影響しています。</p>
+
+        <p>
+          エンジニアの転職市場では、即戦力を求める企業が多いため、未経験者の採用は難しくなっています。特に、プロジェクトが短期間で完結する場合、企業はすぐに活躍できる人材を求め、教育コストや時間をかけることに対するリスクを避ける傾向があります。
+        </p>
+
+        <p>未経験者を教育するためのコストが高く、短期間で育成できる保証がないため、採用リスクが高くなります。ポートフォリオや過去の学習歴だけでは判断しきれないため、実務経験が重視されます。</p>
+
+        <p>
+          AI時代において、コーディングはAIによって補完されることが増え、メタスキルや問題解決能力がより重要になっています。また、学歴や資格も転職には大きな壁となりますが、フリーランスの道を選ぶことで実務経験を積むことができる可能性もあります。
+        </p>
+
+        <p>フリーランスエンジニアは実務経験を重視するため、学歴や資格に依存せず、過去の実績をもとに評価されます。実務経験を積むことで、未経験でもフリーランスとして活躍することが可能になります。</p>
+      </div>
+    </div>
+
+    <div class="related-videos">
+      <h2>🔗 関連動画</h2>
+      <div class="videos-grid">
+        <div class="video-card">
+          <div class="video-thumbnail">
+            <iframe src="https://www.youtube.com/embed/SWhdPRtKaI4?si=aTqPOPR_9Z8TXwPl" title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+          <div class="video-info">
+            <a href="damasarete_itgyoukai.html" class="video-title">
+              未経験歓迎・研修充実に騙されてIT業界入った結果【エンジニア転職】
+            </a>
+            <div class="video-author">
+              講師: 加藤先生 <span class="author-badge">加藤</span>
+            </div>
+            <a href="damasarete_itgyoukai.html" class="video-link">詳細を見る</a>
+          </div>
+        </div>
+
+        <div class="video-card">
+          <div class="video-thumbnail">
+            <iframe src="https://www.youtube.com/embed/4jgo1evsdn0?si=7HxqYblOGb9H5f80" title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+          <div class="video-info">
+            <a href="zeikin_kakuteishinkoku.html" class="video-title">
+              【大公開！】フリーランスエンジニアの確定申告書（2024年分）
+            </a>
+            <div class="video-author">
+              講師: 加藤先生 <span class="author-badge">加藤</span>
+            </div>
+            <a href="zeikin_kakuteishinkoku.html" class="video-link">詳細を見る</a>
+          </div>
+        </div>
+
+        <div class="video-card">
+          <div class="video-thumbnail">
+            <iframe src="https://www.youtube.com/embed/Tl4YioK1ljo?si=QleoDXYlNVmROKwG" title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+          <div class="video-info">
+            <a href="90_zasetsu_proguraming_muitenai_hito.html" class="video-title">
+              【警告】90％挫折！？プログラミングに向いていない人の特徴5選
+            </a>
+            <div class="video-author">
+              講師: 加藤先生 <span class="author-badge">加藤</span>
+            </div>
+            <a href="90_zasetsu_proguraming_muitenai_hito.html" class="video-link">詳細を見る</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>【大公開！】フリーランスエンジニアの確定申告書（2024年分） - プロアカYouTube紹介</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+      min-height: 100vh;
+      color: #333;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .header {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 30px;
+      margin-bottom: 30px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    .header h1 {
+      color: #2c3e50;
+      font-size: 2.2rem;
+      margin-bottom: 10px;
+      background: linear-gradient(45deg, #e74c3c, #c0392b);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .header .subtitle {
+      color: #7f8c8d;
+      font-size: 1.1rem;
+      margin-bottom: 20px;
+    }
+
+    .back-link {
+      display: inline-block;
+      background: linear-gradient(45deg, #e74c3c, #c0392b);
+      color: white;
+      padding: 12px 24px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);
+    }
+
+    .back-link:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(231, 76, 60, 0.4);
+    }
+
+    .video-section {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 30px;
+      margin-bottom: 30px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    }
+
+    .video-container {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .points-section {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 30px;
+      margin-bottom: 30px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    }
+
+    .points-section h2 {
+      color: #2c3e50;
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      text-align: center;
+      border-bottom: 3px solid #e74c3c;
+      padding-bottom: 10px;
+    }
+
+    .points-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .points-list li {
+      background: linear-gradient(45deg, #f8f9fa, #e9ecef);
+      margin-bottom: 15px;
+      padding: 20px;
+      border-radius: 15px;
+      border-left: 5px solid #e74c3c;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    .points-list li:hover {
+      transform: translateX(5px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .transcript-section {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 30px;
+      margin-bottom: 30px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    }
+
+    .transcript-section h2 {
+      color: #2c3e50;
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      text-align: center;
+      border-bottom: 3px solid #e74c3c;
+      padding-bottom: 10px;
+    }
+
+    .transcript-content {
+      background: #f8f9fa;
+      padding: 25px;
+      border-radius: 15px;
+      line-height: 1.8;
+      color: #2c3e50;
+    }
+
+    .related-videos {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 30px;
+      margin-bottom: 30px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    }
+
+    .related-videos h2 {
+      color: #2c3e50;
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      text-align: center;
+      border-bottom: 3px solid #e74c3c;
+      padding-bottom: 10px;
+    }
+
+    .videos-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
+
+    .video-card {
+      background: white;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+      border: 1px solid #e0e0e0;
+    }
+
+    .video-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    }
+
+    .video-thumbnail {
+      width: 100%;
+      height: 180px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .video-thumbnail iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .video-info {
+      padding: 20px;
+    }
+
+    .video-title {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #2c3e50;
+      margin-bottom: 10px;
+      line-height: 1.4;
+      text-decoration: none;
+      display: block;
+    }
+
+    .video-title:hover {
+      color: #e74c3c;
+    }
+
+    .video-author {
+      color: #7f8c8d;
+      font-size: 0.9rem;
+      margin-bottom: 15px;
+    }
+
+    .video-link {
+      display: inline-block;
+      background: linear-gradient(45deg, #e74c3c, #c0392b);
+      color: white;
+      padding: 8px 16px;
+      border-radius: 20px;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+
+    .video-link:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);
+    }
+
+    .author-badge {
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 15px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin-left: 10px;
+      background: linear-gradient(45deg, #e74c3c, #c0392b);
+      color: white;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        padding: 15px;
+      }
+
+      .header h1 {
+        font-size: 1.8rem;
+      }
+
+      .videos-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .points-list li {
+        padding: 15px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>【大公開！】フリーランスエンジニアの確定申告書（2024年分）</h1>
+      <p class="subtitle">フリーランスエンジニアの確定申告の実例とポイントを解説</p>
+      <a href="../../top.html" class="back-link">← トップページに戻る</a>
+    </div>
+
+    <div class="video-section">
+      <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/4jgo1evsdn0?si=7HxqYblOGb9H5f80" title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+    </div>
+
+    <div class="points-section">
+      <h2>🎯 この動画のポイント</h2>
+      <ul class="points-list">
+        <li><strong>確定申告の基本</strong><br>フリーランスエンジニアが知っておくべき確定申告の基本知識と手続きについて解説。</li>
+        <li><strong>収入の計上方法</strong><br>フリーランスとして得た収入をどのように計上し、申告するかを実例で説明。</li>
+        <li><strong>経費の計上</strong><br>フリーランスエンジニアとして認められる経費と、その計上方法について詳しく解説。</li>
+        <li><strong>節税のポイント</strong><br>合法的な節税方法と、フリーランスエンジニアが活用できる控除について説明。</li>
+        <li><strong>申告書の書き方</strong><br>実際の確定申告書の書き方と、注意すべきポイントを実例で紹介。</li>
+      </ul>
+    </div>
+
+    <div class="transcript-section">
+      <h2>📝 動画の文字起こし</h2>
+      <div class="transcript-content">
+        <p>フリーランスエンジニアの確定申告について、実際の申告書を公開しながら詳しく解説した内容です。</p>
+
+        <p>フリーランスエンジニアとして働く場合、確定申告は避けて通れない重要な手続きです。会社員とは異なり、自分で収入を申告し、税金を計算する必要があります。</p>
+
+        <p>収入の計上については、クライアントから受け取った報酬をすべて申告する必要があります。ただし、源泉徴収された分は既に税金が引かれているため、二重課税を避けるための調整が必要です。</p>
+
+        <p>経費の計上については、フリーランスエンジニアとして認められる経費を適切に計上することで、税負担を軽減できます。例えば、パソコンやソフトウェアの購入費、通信費、書籍代などが経費として認められます。</p>
+
+        <p>節税のポイントとして、青色申告の活用や、小規模企業共済への加入などが効果的です。また、自宅で仕事をしている場合は、家事按分による経費の計上も可能です。</p>
+
+        <p>確定申告書の書き方については、実際の申告書を見ながら、どの項目に何を記入するかを詳しく説明しています。特に、収入金額や経費の内訳、控除額の計算方法について重点的に解説しています。</p>
+
+        <p>フリーランスエンジニアとして長期的に活動するためには、適切な確定申告の知識と実践が不可欠です。この動画では、実践的なノウハウを提供し、安心してフリーランス活動を行えるようサポートしています。</p>
+      </div>
+    </div>
+
+    <div class="related-videos">
+      <h2>🔗 関連動画</h2>
+      <div class="videos-grid">
+        <div class="video-card">
+          <div class="video-thumbnail">
+            <iframe src="https://www.youtube.com/embed/SWhdPRtKaI4?si=aTqPOPR_9Z8TXwPl" title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+          <div class="video-info">
+            <a href="damasarete_itgyoukai.html" class="video-title">
+              未経験歓迎・研修充実に騙されてIT業界入った結果【エンジニア転職】
+            </a>
+            <div class="video-author">
+              講師: 加藤先生 <span class="author-badge">加藤</span>
+            </div>
+            <a href="damasarete_itgyoukai.html" class="video-link">詳細を見る</a>
+          </div>
+        </div>
+
+        <div class="video-card">
+          <div class="video-thumbnail">
+            <iframe src="https://www.youtube.com/embed/SWhdPRtKaI4?si=3SfiE4hZHKkWE-G4" title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+          <div class="video-info">
+            <a href="it_hitodebusoku_real.html" class="video-title">
+              【エンジニア転職】人手不足なのに未経験お断りのIT業界のリアルを解説
+            </a>
+            <div class="video-author">
+              講師: 加藤先生 <span class="author-badge">加藤</span>
+            </div>
+            <a href="it_hitodebusoku_real.html" class="video-link">詳細を見る</a>
+          </div>
+        </div>
+
+        <div class="video-card">
+          <div class="video-thumbnail">
+            <iframe src="https://www.youtube.com/embed/Tl4YioK1ljo?si=QleoDXYlNVmROKwG" title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+          <div class="video-info">
+            <a href="90_zasetsu_proguraming_muitenai_hito.html" class="video-title">
+              【警告】90％挫折！？プログラミングに向いていない人の特徴5選
+            </a>
+            <div class="video-author">
+              講師: 加藤先生 <span class="author-badge">加藤</span>
+            </div>
+            <a href="90_zasetsu_proguraming_muitenai_hito.html" class="video-link">詳細を見る</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

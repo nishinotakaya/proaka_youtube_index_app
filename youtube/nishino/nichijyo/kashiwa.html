@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>【自由度300%】元介護士エンジニアの日常 IN 柏 - プロアカYouTube紹介</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #9b59b6 0%, #8e44ad 100%);
+      min-height: 100vh;
+      color: #333;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .header {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 30px;
+      margin-bottom: 30px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    .header h1 {
+      color: #2c3e50;
+      font-size: 2.2rem;
+      margin-bottom: 10px;
+      background: linear-gradient(45deg, #9b59b6, #8e44ad);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .header .subtitle {
+      color: #7f8c8d;
+      font-size: 1.1rem;
+      margin-bottom: 20px;
+    }
+
+    .back-link {
+      display: inline-block;
+      background: linear-gradient(45deg, #9b59b6, #8e44ad);
+      color: white;
+      padding: 12px 24px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(155, 89, 182, 0.3);
+    }
+
+    .back-link:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(155, 89, 182, 0.4);
+    }
+
+    .video-section {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 30px;
+      margin-bottom: 30px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    }
+
+    .video-container {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .points-section {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 30px;
+      margin-bottom: 30px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    }
+
+    .points-section h2 {
+      color: #2c3e50;
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      text-align: center;
+      border-bottom: 3px solid #9b59b6;
+      padding-bottom: 10px;
+    }
+
+    .points-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .points-list li {
+      background: linear-gradient(45deg, #f8f9fa, #e9ecef);
+      margin-bottom: 15px;
+      padding: 20px;
+      border-radius: 15px;
+      border-left: 5px solid #9b59b6;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    .points-list li:hover {
+      transform: translateX(5px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .transcript-section {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 30px;
+      margin-bottom: 30px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    }
+
+    .transcript-section h2 {
+      color: #2c3e50;
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      text-align: center;
+      border-bottom: 3px solid #9b59b6;
+      padding-bottom: 10px;
+    }
+
+    .transcript-content {
+      background: #f8f9fa;
+      padding: 25px;
+      border-radius: 15px;
+      line-height: 1.8;
+      color: #2c3e50;
+    }
+
+    .related-videos {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 30px;
+      margin-bottom: 30px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    }
+
+    .related-videos h2 {
+      color: #2c3e50;
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      text-align: center;
+      border-bottom: 3px solid #9b59b6;
+      padding-bottom: 10px;
+    }
+
+    .videos-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
+
+    .video-card {
+      background: white;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+      border: 1px solid #e0e0e0;
+    }
+
+    .video-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    }
+
+    .video-thumbnail {
+      width: 100%;
+      height: 180px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .video-thumbnail iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .video-info {
+      padding: 20px;
+    }
+
+    .video-title {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #2c3e50;
+      margin-bottom: 10px;
+      line-height: 1.4;
+      text-decoration: none;
+      display: block;
+    }
+
+    .video-title:hover {
+      color: #9b59b6;
+    }
+
+    .video-author {
+      color: #7f8c8d;
+      font-size: 0.9rem;
+      margin-bottom: 15px;
+    }
+
+    .video-link {
+      display: inline-block;
+      background: linear-gradient(45deg, #9b59b6, #8e44ad);
+      color: white;
+      padding: 8px 16px;
+      border-radius: 20px;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+
+    .video-link:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 15px rgba(155, 89, 182, 0.3);
+    }
+
+    .author-badge {
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 15px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin-left: 10px;
+      background: linear-gradient(45deg, #9b59b6, #8e44ad);
+      color: white;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        padding: 15px;
+      }
+
+      .header h1 {
+        font-size: 1.8rem;
+      }
+
+      .videos-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .points-list li {
+        padding: 15px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>【自由度300%】元介護士エンジニアの日常 IN 柏</h1>
+      <p class="subtitle">西野先生の柏でのエンジニア生活を完全公開！</p>
+      <a href="../../../top.html" class="back-link">← トップページに戻る</a>
+    </div>
+
+    <div class="video-section">
+      <div class="video-container">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/szNIKRx3g7A?si=3E5VhHX7Bz1ARAzT"
+          title="YouTube video player" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+    </div>
+
+    <div class="points-section">
+      <h2>🎯 この動画のポイント</h2>
+      <ul class="points-list">
+        <li><strong>柏でのエンジニア生活</strong><br>元介護士の西野先生が柏で過ごすエンジニアの日常を完全公開</li>
+        <li><strong>自由度300%の働き方</strong><br>田町よりもさらに柔軟な働き方を実現した柏での生活</li>
+        <li><strong>地方でのエンジニア生活</strong><br>東京から少し離れた柏でのエンジニアとしての生活環境</li>
+        <li><strong>ワークライフバランス</strong><br>介護士時代とは全く違う、充実したプライベート時間</li>
+        <li><strong>柏エリアの魅力</strong><br>エンジニアにとって魅力的な柏エリアの環境や利便性</li>
+      </ul>
+    </div>
+
+    <div class="transcript-section">
+      <h2>📝 動画の文字起こし</h2>
+      <div class="transcript-content">
+        <p>こんにちは、西野です。今日は柏でのエンジニア生活を完全公開します。</p>
+
+        <p>朝は8時頃に起きて、まずは自宅のベランダで朝日を浴びながらコーヒー。柏の空気は田町よりも新鮮で、一日のスタートが気持ちいいです。</p>
+
+        <p>9時からは自宅のデスクでリモートワーク開始。柏の自宅は田町のマンションよりも広くて、専用の作業スペースが確保できています。</p>
+
+        <p>午前中は集中してコーディング作業。介護士時代の忙しさとは全く違う、自分のペースで進められる仕事に満足しています。</p>
+
+        <p>お昼は柏駅周辺のレストランでランチ。田町よりもリーズナブルで、美味しいお店がたくさんあります。</p>
+
+        <p>午後はオンラインでチームミーティング。柏からでも東京のチームと問題なく連携できています。</p>
+
+        <p>夕方は柏の森で散歩。エンジニアとしての新しい生活で、自然との触れ合いも楽しめるようになりました。</p>
+
+        <p>夜は自宅でリラックスしながら、明日のタスクを整理。介護士からエンジニアに転職して、柏での新しい生活が最高です。</p>
+      </div>
+    </div>
+
+    <div class="related-videos">
+      <h2>🔗 関連動画</h2>
+      <div class="videos-grid">
+        <div class="video-card">
+          <div class="video-thumbnail">
+            <iframe src="https://www.youtube.com/embed/GYXGa5Evz3U?si=2_5Pb6zfSJkOJjX8" title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+          <div class="video-info">
+            <a href="tamachi.html" class="video-title">
+              【自由度150%】元介護士エンジニアの日常 IN 田町
+            </a>
+            <div class="video-author">
+              講師: 西野先生 <span class="author-badge">西野</span>
+            </div>
+            <a href="tamachi.html" class="video-link">詳細を見る</a>
+          </div>
+        </div>
+
+        <div class="video-card">
+          <div class="video-thumbnail">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/szNIKRx3g7A?si=Ro-X1KkcyLGhh6FV"
+              title="YouTube video player" frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+          <div class="video-info">
+            <a href="shimokita.html" class="video-title">
+              【自由度500%】元介護士エンジニアの濃い日常 IN 下北沢
+            </a>
+            <div class="video-author">
+              講師: 西野先生 <span class="author-badge">西野</span>
+            </div>
+            <a href="shimokita.html" class="video-link">詳細を見る</a>
+          </div>
+        </div>
+
+        <div class="video-card">
+          <div class="video-thumbnail">
+            <iframe src="https://www.youtube.com/embed/qp9S6E5D4jk?si=z6Jon_YGFg8MsVDK" title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+          <div class="video-info">
+            <a href="../kaigoshi_jinseigyakuten.html" class="video-title">
+              【実話】介護職からエンジニア転職で月収5倍！？人生大逆転ストーリー
+            </a>
+            <div class="video-author">
+              講師: 西野先生 <span class="author-badge">西野</span>
+            </div>
+            <a href="../kaigoshi_jinseigyakuten.html" class="video-link">詳細を見る</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

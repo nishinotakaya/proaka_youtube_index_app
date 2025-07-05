@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>【一泊10万円】元エンジニアのIT社長のリモートワーク風景【日常VLOG】 - プロアカYouTube紹介</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+      min-height: 100vh;
+      color: #333;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .header {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 30px;
+      margin-bottom: 30px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    .header h1 {
+      color: #2c3e50;
+      font-size: 2.2rem;
+      margin-bottom: 10px;
+      background: linear-gradient(45deg, #3498db, #2980b9);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .header .subtitle {
+      color: #7f8c8d;
+      font-size: 1.1rem;
+      margin-bottom: 20px;
+    }
+
+    .back-link {
+      display: inline-block;
+      background: linear-gradient(45deg, #3498db, #2980b9);
+      color: white;
+      padding: 12px 24px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+    }
+
+    .back-link:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(52, 152, 219, 0.4);
+    }
+
+    .video-section {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 30px;
+      margin-bottom: 30px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    }
+
+    .video-container {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .points-section {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 30px;
+      margin-bottom: 30px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    }
+
+    .points-section h2 {
+      color: #2c3e50;
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      text-align: center;
+      border-bottom: 3px solid #3498db;
+      padding-bottom: 10px;
+    }
+
+    .points-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .points-list li {
+      background: linear-gradient(45deg, #f8f9fa, #e9ecef);
+      margin-bottom: 15px;
+      padding: 20px;
+      border-radius: 15px;
+      border-left: 5px solid #3498db;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    .points-list li:hover {
+      transform: translateX(5px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .transcript-section {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 30px;
+      margin-bottom: 30px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    }
+
+    .transcript-section h2 {
+      color: #2c3e50;
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      text-align: center;
+      border-bottom: 3px solid #3498db;
+      padding-bottom: 10px;
+    }
+
+    .transcript-content {
+      background: #f8f9fa;
+      padding: 25px;
+      border-radius: 15px;
+      line-height: 1.8;
+      color: #2c3e50;
+    }
+
+    .related-videos {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 30px;
+      margin-bottom: 30px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    }
+
+    .related-videos h2 {
+      color: #2c3e50;
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      text-align: center;
+      border-bottom: 3px solid #3498db;
+      padding-bottom: 10px;
+    }
+
+    .videos-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
+
+    .video-card {
+      background: white;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+      border: 1px solid #e0e0e0;
+    }
+
+    .video-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    }
+
+    .video-thumbnail {
+      width: 100%;
+      height: 180px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .video-thumbnail iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .video-info {
+      padding: 20px;
+    }
+
+    .video-title {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #2c3e50;
+      margin-bottom: 10px;
+      line-height: 1.4;
+      text-decoration: none;
+      display: block;
+    }
+
+    .video-title:hover {
+      color: #3498db;
+    }
+
+    .video-author {
+      color: #7f8c8d;
+      font-size: 0.9rem;
+      margin-bottom: 15px;
+    }
+
+    .video-link {
+      display: inline-block;
+      background: linear-gradient(45deg, #3498db, #2980b9);
+      color: white;
+      padding: 8px 16px;
+      border-radius: 20px;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+
+    .video-link:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+    }
+
+    .author-badge {
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 15px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin-left: 10px;
+      background: linear-gradient(45deg, #3498db, #2980b9);
+      color: white;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        padding: 15px;
+      }
+
+      .header h1 {
+        font-size: 1.8rem;
+      }
+
+      .videos-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .points-list li {
+        padding: 15px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>【一泊10万円】元エンジニアのIT社長のリモートワーク風景【日常VLOG】</h1>
+      <p class="subtitle">年商◯億円！小松先生のIT社長としてのリモートワーク生活を完全公開</p>
+      <a href="../../../top.html" class="back-link">← トップページに戻る</a>
+    </div>
+
+    <div class="video-section">
+      <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/mrdbOip1DWE?si=lAiYtD3-3jr1y1rk" title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+    </div>
+
+    <div class="points-section">
+      <h2>🎯 この動画のポイント</h2>
+      <ul class="points-list">
+        <li><strong>IT社長のリモートワーク</strong><br>年商◯億円のIT企業社長としての実際のリモートワーク風景</li>
+        <li><strong>一泊10万円の環境</strong><br>高級ホテルやリゾート地でのリモートワーク環境を完全公開</li>
+        <li><strong>エンジニアから社長への転身</strong><br>エンジニアとしての経験を活かしたIT企業経営の実態</li>
+        <li><strong>成功者の日常</strong><br>年商◯億円を達成したIT社長の実際の一日の過ごし方</li>
+        <li><strong>リモートワークの極意</strong><br>場所に縛られない働き方で成功を収める方法論</li>
+      </ul>
+    </div>
+
+    <div class="transcript-section">
+      <h2>📝 動画の文字起こし</h2>
+      <div class="transcript-content">
+        <p>こんにちは、小松です。今日はIT社長としてのリモートワーク生活を完全公開します。</p>
+
+        <p>朝は6時頃に起きて、一泊10万円の高級ホテルのスイートルームで朝食。エンジニア時代には想像もできなかった贅沢な環境です。</p>
+
+        <p>7時からはホテルのビジネスラウンジでリモートワーク開始。年商◯億円のIT企業の社長として、世界中のチームとオンラインでミーティング。</p>
+
+        <p>午前中は戦略会議や投資判断。エンジニアとしての技術的な知識が、経営判断に大きく活かされています。</p>
+
+        <p>お昼はホテルのレストランでランチ。リモートワークのメリットを最大限に活かして、最高の環境で仕事ができます。</p>
+
+        <p>午後は新規プロジェクトの立ち上げ会議。エンジニアから社長になったことで、技術と経営の両面から判断できるようになりました。</p>
+
+        <p>夕方はホテルのプールサイドでリラックスしながら、明日の戦略を考える。これが成功者のリモートワークです。</p>
+
+        <p>夜は高級レストランで取引先との会食。エンジニアからIT社長への転身で、人生が大きく変わりました。</p>
+      </div>
+    </div>
+
+    <div class="related-videos">
+      <h2>🔗 関連動画</h2>
+      <div class="videos-grid">
+        <div class="video-card">
+          <div class="video-thumbnail">
+            <iframe src="https://www.youtube.com/embed/TAM-o213zTo?si=GoNF3J5MRpiC2YyO" title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+          <div class="video-info">
+            <a href="../makino_intaview.html" class="video-title">
+              【月収20→50万】30代女性エステティシャンがエンジニアに転職した結果
+            </a>
+            <div class="video-author">
+              講師: 小松先生 <span class="author-badge">小松</span>
+            </div>
+            <a href="../makino_intaview.html" class="video-link">詳細を見る</a>
+          </div>
+        </div>
+
+        <div class="video-card">
+          <div class="video-thumbnail">
+            <iframe src="https://www.youtube.com/embed/yAgm3FY5_xM?si=x6GD_dSc01949gyK" title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+          <div class="video-info">
+            <a href="../itou_intaview.html" class="video-title">
+              【月収45万円】社長秘書からエンジニア女子に転職した伊藤さん
+            </a>
+            <div class="video-author">
+              講師: 小松先生 <span class="author-badge">小松</span>
+            </div>
+            <a href="../itou_intaview.html" class="video-link">詳細を見る</a>
+          </div>
+        </div>
+
+        <div class="video-card">
+          <div class="video-thumbnail">
+            <iframe src="https://www.youtube.com/embed/_2qLsvlrSps?si=_2iFiuB38zv_oscs" title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+          <div class="video-info">
+            <a href="../okuno_intaview.html" class="video-title">
+              【月収18→41万】22歳高卒の水族館職員からエンジニア転職した理由
+            </a>
+            <div class="video-author">
+              講師: 小松先生 <span class="author-badge">小松</span>
+            </div>
+            <a href="../okuno_intaview.html" class="video-link">詳細を見る</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

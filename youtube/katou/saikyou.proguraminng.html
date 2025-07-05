@@ -237,6 +237,26 @@
       color: #e74c3c;
     }
 
+    .qa-section {
+      margin-top: 20px;
+    }
+
+    .qa-item {
+      background: #f8f9fa;
+      padding: 20px;
+      margin-bottom: 15px;
+      border-radius: 10px;
+      border-left: 4px solid #e74c3c;
+    }
+
+    .qa-item p {
+      margin-bottom: 10px;
+    }
+
+    .qa-item p:last-child {
+      margin-bottom: 0;
+    }
+
     @media (max-width: 768px) {
       h1 {
         font-size: 1.8rem;
@@ -294,42 +314,61 @@
     <div class="transcript-section">
       <h2 class="section-title">📝 動画内容の文字起こし</h2>
       <div class="transcript-content">
-        <h3>【序章】なぜ今プログラミング言語を学ぶべきなのか？</h3>
-        <p>こんにちは、加藤です。2025年に入って、プログラミングを学びたいと思っている方も多いと思います。でも、どの言語から始めればいいのか迷いますよね。</p>
+        <h3>概要</h3>
+        <p>
+          この動画では、2025年版として今から始めるべきプログラミング言語としてJavaScriptを推奨しています。JavaScriptは需要が高く、学びやすく、給料が良い職業に結びつきやすいことが特徴です。文法がシンプルで英語に近く、すぐに成果が見えるため楽しみながら学べる点が大きな利点です。また、JavaScriptは多くの企業で使われており、将来的にも活用され続けると予想されます。さらに、Reactと一緒に学ぶことでさらにスキルを高めることができます。
+        </p>
 
-        <p>今日は、2025年に最も学ぶ価値のあるプログラミング言語を、市場の需要と将来性を考慮してランキング形式でお伝えします。</p>
-
-        <h3>【第1位】Python</h3>
-        <p>まず第1位は、やはりPythonです。AI・機械学習、データサイエンス、Web開発、自動化など、幅広い分野で使われています。</p>
+        <h3>要点</h3>
         <ul>
-          <li>初心者に優しい文法</li>
-          <li>豊富なライブラリ</li>
-          <li>AI・機械学習分野での圧倒的な需要</li>
-          <li>年収相場：400万円〜800万円</li>
+          <li>💻 <strong>JavaScriptのおすすめ理由:</strong> JavaScriptは需要が高く、学びやすく、給料が良い職業に結びつきやすい。</li>
+          <li>🔑 <strong>初心者でも学びやすい:</strong> 文法がシンプルで、英語に近いので覚えやすく、すぐに成果が見えるため、楽しみながら学べる。</li>
+          <li>🧑‍💻 <strong>多くの企業で活用されている:</strong> JavaScriptはウェブサイトやアプリケーションで広く使われており、将来的にも継続的に活用される。</li>
+          <li>💸 <strong>給料が高い:</strong> JavaScriptを活用するエンジニアは平均年収600万円以上、スキルを磨くことで1000万円以上も可能。</li>
+          <li>🏠 <strong>リモートワークが可能:</strong> Web系の仕事はリモートワークが多く、プライベートの充実や仕事の効率向上が期待できる。</li>
+          <li>🚀 <strong>将来性が高い:</strong> JavaScriptはWebの標準言語として確立されており、今後も使われ続ける可能性が高い。</li>
         </ul>
 
-        <h3>【第2位】JavaScript</h3>
-        <p>第2位はJavaScriptです。Web開発には欠かせない言語で、フロントエンドからバックエンドまで幅広く使えます。</p>
+        <h3>キーワード</h3>
+        <p>JavaScript、プログラミング、React</p>
+
+        <h3>動画のタイムライン</h3>
         <ul>
-          <li>Web開発の必須スキル</li>
-          <li>React、Vue.jsなどのフレームワーク</li>
-          <li>Node.jsでのサーバーサイド開発</li>
-          <li>年収相場：350万円〜700万円</li>
+          <li><strong>00:00:39</strong> - イントロダクションと講師の経歴</li>
+          <li><strong>00:01:34</strong> - JavaScriptとその応用分野の理解</li>
+          <li><strong>00:03:08</strong> - JavaScriptの5つの主要な利点</li>
+          <li><strong>00:04:28</strong> - 他のプログラミング言語との比較</li>
+          <li><strong>00:07:12</strong> - ワークライフバランスとキャリアの利点</li>
+          <li><strong>00:10:18</strong> - 将来の展望と追加学習要件</li>
         </ul>
 
-        <h3>【第3位】TypeScript</h3>
-        <p>第3位はTypeScriptです。JavaScriptの上位互換言語として、大規模開発で重宝されています。</p>
-        <ul>
-          <li>型安全性によるバグの削減</li>
-          <li>大企業での採用が増加</li>
-          <li>React、Vue.jsとの相性が良い</li>
-          <li>年収相場：400万円〜800万円</li>
-        </ul>
-
-        <h3>【まとめ】学習の優先順位</h3>
-        <p>初心者の方は、まずPythonから始めることをお勧めします。その後、Web開発に興味があればJavaScript、より本格的な開発をしたい場合はTypeScriptを学ぶのが良いでしょう。</p>
-
-        <p>重要なのは、一つの言語を深く学ぶことです。表面的な知識ではなく、実際にプロジェクトを作って経験を積むことが成功への近道です。</p>
+        <h3>動画についての質問 (ベータ版)</h3>
+        <div class="qa-section">
+          <div class="qa-item">
+            <p><strong>Q: なぜJavaScriptが初心者におすすめされるのか？</strong></p>
+            <p>A:
+              JavaScriptは需要が高く、学びやすく、給料が良く、働きやすい企業が使っているため、初心者にとって最適な選択肢です。文法がシンプルで英語に近く、作成したものがすぐに動きとして確認できるため、楽しく学び続けやすいです。
+            </p>
+          </div>
+          <div class="qa-item">
+            <p><strong>Q: JavaScriptを学ぶメリットは何ですか？</strong></p>
+            <p>A:
+              JavaScriptはウェブサイトやウェブアプリで広く使われており、iOSやAndroidなど、さまざまなプラットフォームで動作するため、汎用性が高いです。また、Webアプリを作る際にインストール不要で、スマホやPC、タブレットで使用できる点も大きな利点です。
+            </p>
+          </div>
+          <div class="qa-item">
+            <p><strong>Q: JavaScriptと他のプログラミング言語を比較した場合、どのような違いがありますか？</strong></p>
+            <p>A:
+              JavaScriptは難易度が低く、学びやすい言語です。例えば、PythonやRubyなどの他の言語に比べ、数学的要素やインフラの知識が必要ないため、初心者でも取り組みやすいです。特にWeb関連の仕事では、JavaScriptが非常に重要なスキルとなります。
+            </p>
+          </div>
+          <div class="qa-item">
+            <p><strong>Q: JavaScriptを学んで得られる収入はどの程度ですか？</strong></p>
+            <p>A:
+              JavaScriptを使った仕事は高収入を得やすく、平均年収は600万円以上と言われています。実際に、中卒でもエンジニアとして700万円以上の年収を得ることができる業界で、今後のキャリアに大きな可能性があります。
+            </p>
+          </div>
+        </div>
       </div>
     </div>
 

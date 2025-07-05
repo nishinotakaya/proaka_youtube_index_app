@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>無料体験版スタート手順</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Noto Sans JP', sans-serif;
+            overflow: hidden;
+        }
+
+        @media (max-width: 768px) {
+
+            body,
+            html {
+                overflow: auto;
+            }
+        }
+
+        .slide-container {
+            width: 100vw;
+            height: 100vh;
+            position: relative;
+            background: linear-gradient(135deg, #0f1419 0%, #1a1e36 50%, #0f1419 100%);
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+        }
+
+        @media (max-width: 768px) {
+            .slide-container {
+                min-height: 100vh;
+                height: auto;
+            }
+        }
+
+        .code-decoration {
+            position: absolute;
+            opacity: 0.08;
+            font-family: 'Courier New', monospace;
+            font-size: 1.5rem;
+            color: #64ffda;
+            z-index: 1;
+            text-shadow: 0 0 10px rgba(100, 255, 218, 0.3);
+        }
+
+        .code-top-right {
+            top: 40px;
+            right: 40px;
+        }
+
+        .code-bottom-left {
+            bottom: 40px;
+            left: 40px;
+        }
+
+        .title-highlight {
+            color: #64ffda;
+            font-weight: 900;
+            text-shadow: 0 0 20px rgba(100, 255, 218, 0.5);
+        }
+
+        .header-line {
+            width: 100px;
+            height: 6px;
+            background: linear-gradient(135deg, #64ffda 0%, #4fd1c7 100%);
+            margin: 10px 0;
+            border-radius: 5px;
+            box-shadow: 0 4px 15px rgba(100, 255, 218, 0.3);
+        }
+
+        .content-wrapper {
+            z-index: 2;
+            padding: 20px 30px;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .main-title {
+            font-size: 1.8rem;
+            font-weight: 900;
+            margin-bottom: 8px;
+            text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .nav-buttons {
+            position: fixed;
+            bottom: 40px;
+            right: 40px;
+            display: flex;
+            gap: 15px;
+            z-index: 10;
+        }
+
+        .nav-button {
+            background: linear-gradient(135deg, #64ffda 0%, #4fd1c7 100%);
+            color: #0f1419;
+            font-weight: bold;
+            font-size: 18px;
+            padding: 12px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            box-shadow: 0 6px 20px rgba(100, 255, 218, 0.3);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .nav-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(100, 255, 218, 0.4);
+        }
+
+        .nav-button.prev {
+            background: linear-gradient(135deg, #6b7280 0%, #4b5563 100%);
+            box-shadow: 0 6px 20px rgba(107, 114, 128, 0.3);
+        }
+
+        .nav-button.prev:hover {
+            box-shadow: 0 8px 25px rgba(107, 114, 128, 0.4);
+        }
+
+        .steps-container {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 15px;
+        }
+
+        .steps-row {
+            display: flex;
+            gap: 15px;
+            width: 100%;
+            max-width: 1600px;
+            justify-content: center;
+            align-items: stretch;
+        }
+
+        .step-item {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.05) 100%);
+            border-radius: 16px;
+            border-left: 6px solid #64ffda;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            width: 400px;
+            min-height: 270px;
+            justify-content: space-between;
+        }
+
+        .step-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 12px;
+            flex-shrink: 0;
+        }
+
+        .step-number {
+            background: linear-gradient(135deg, #64ffda 0%, #4fd1c7 100%);
+            color: #0f1419;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 18px;
+            font-weight: bold;
+            margin-right: 10px;
+            box-shadow: 0 6px 20px rgba(100, 255, 218, 0.3);
+            flex-shrink: 0;
+        }
+
+        .step-icon {
+            background: linear-gradient(135deg, #64ffda 0%, #4fd1c7 100%);
+            color: #0f1419;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 14px;
+            margin-right: 8px;
+            flex-shrink: 0;
+            box-shadow: 0 6px 20px rgba(100, 255, 218, 0.3);
+        }
+
+        .step-text {
+            font-size: 14px;
+            color: #ffffff;
+            line-height: 1.3;
+            font-weight: 500;
+        }
+
+        .step-description {
+            font-size: 12px;
+            color: #b0b0b0;
+            line-height: 1.4;
+            margin-bottom: 12px;
+            flex: 1;
+        }
+
+        .step-image {
+            width: 100%;
+            height: 540px;
+            object-fit: cover;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            border: 2px solid rgba(100, 255, 218, 0.2);
+            flex-shrink: 0;
+        }
+
+        .step-image.sidebar-select {
+            object-position: top center;
+        }
+
+        /* レスポンシブ対応 */
+        @media (max-width: 1400px) {
+            .steps-row {
+                gap: 12px;
+            }
+
+            .step-item {
+                width: 350px;
+                padding: 12px;
+            }
+
+            .step-image {
+                height: 470px;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            .steps-row {
+                gap: 10px;
+            }
+
+            .step-item {
+                width: 300px;
+                padding: 10px;
+            }
+
+            .step-text {
+                font-size: 13px;
+            }
+
+            .step-description {
+                font-size: 11px;
+            }
+
+            .step-image {
+                height: 400px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .content-wrapper {
+                padding: 15px 15px;
+            }
+
+            .main-title {
+                font-size: 1.5rem;
+                margin-bottom: 5px;
+            }
+
+            .header-line {
+                width: 80px;
+                height: 5px;
+                margin: 8px 0;
+            }
+
+            .steps-container {
+                margin-top: 10px;
+            }
+
+            .steps-row {
+                flex-direction: column;
+                gap: 20px;
+                align-items: center;
+            }
+
+            .step-item {
+                width: 100%;
+                max-width: 500px;
+                min-height: auto;
+                padding: 15px;
+            }
+
+            .step-text {
+                font-size: 16px;
+            }
+
+            .step-description {
+                font-size: 13px;
+            }
+
+            .step-image {
+                height: 500px;
+            }
+
+            .nav-buttons {
+                bottom: 20px;
+                right: 20px;
+            }
+
+            .nav-button {
+                font-size: 16px;
+                padding: 10px 16px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .content-wrapper {
+                padding: 10px 10px;
+            }
+
+            .main-title {
+                font-size: 1.3rem;
+            }
+
+            .step-item {
+                padding: 12px;
+            }
+
+            .step-number {
+                width: 35px;
+                height: 35px;
+                font-size: 16px;
+            }
+
+            .step-icon {
+                width: 25px;
+                height: 25px;
+                font-size: 12px;
+            }
+
+            .step-image {
+                height: 450px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="slide-container">
+        <!-- コード風装飾 -->
+        <div class="code-decoration code-top-right">
+            function startLearning() {<br>
+            &nbsp;&nbsp;const steps = 5;<br>
+            &nbsp;&nbsp;return "success";<br>
+            }
+        </div>
+        <div class="code-decoration code-bottom-left">
+            &lt;div class="guide"&gt;<br>
+            &nbsp;&nbsp;参加方法を確認<br>
+            &lt;/div&gt;
+        </div>
+        <div class="content-wrapper">
+            <h1 class="text-6xl font-black mb-2">無料体験版<span class="title-highlight">スタート手順</span></h1>
+            <div class="header-line"></div>
+
+            <div class="steps-container">
+                <div class="steps-row">
+                    <!-- ステップ6 -->
+                    <div class="step-item">
+                        <div class="step-header">
+                            <div class="step-number">6</div>
+                            <div class="step-icon">
+                                <i class="far fa-envelope"></i>
+                            </div>
+                            <div class="step-text">
+                                メール受信ボックスから<span class="title-highlight font-bold">「本登録はこちら」</span>をクリック
+                            </div>
+                        </div>
+                        <div class="step-description">
+                            登録時に使用したメールアドレスに送信されたメールから「本登録はこちら」のリンクをクリックします。
+                        </div>
+                        <img src="6.メール受信ボックスから、本登録はこちらをクリック.jpg" alt="メール受信ボックスから本登録はこちらをクリック" class="step-image">
+                    </div>
+
+                    <!-- ステップ7 -->
+                    <div class="step-item">
+                        <div class="step-header">
+                            <div class="step-number">7</div>
+                            <div class="step-icon">
+                                <i class="fas fa-key"></i>
+                            </div>
+                            <div class="step-text">
+                                <span class="title-highlight font-bold">パスワードを再設定</span>
+                            </div>
+                        </div>
+                        <div class="step-description">
+                            メールリンクからアクセスしたページで、新しいパスワードを設定します。
+                        </div>
+                        <img src="7.パスワードを再設定.png" alt="パスワードを再設定" class="step-image">
+                    </div>
+
+                    <!-- ステップ8 -->
+                    <div class="step-item">
+                        <div class="step-header">
+                            <div class="step-number">8</div>
+                            <div class="step-icon">
+                                <i class="fas fa-bars"></i>
+                            </div>
+                            <div class="step-text">
+                                サイドバーの<span class="title-highlight font-bold">フロントコース体験版</span>を選択
+                            </div>
+                        </div>
+                        <div class="step-description">
+                            ログイン後、左側のサイドバーから「フロントコース体験版」を選択します。
+                        </div>
+                        <img src="8.サイドバーのフロントコース体験版を選択.png" alt="サイドバーのフロントコース体験版を選択"
+                            class="step-image sidebar-select">
+                    </div>
+
+                    <!-- ステップ9 -->
+                    <div class="step-item">
+                        <div class="step-header">
+                            <div class="step-number">9</div>
+                            <div class="step-icon">
+                                <i class="fas fa-play"></i>
+                            </div>
+                            <div class="step-text">
+                                <span class="title-highlight font-bold">「学習を開始する」</span>をクリック
+                            </div>
+                        </div>
+                        <div class="step-description">
+                            フロントコース体験版のページで「学習を開始する」ボタンをクリックします。
+                        </div>
+                        <img src="9.「学習を開始する」をクリック.png" alt="学習を開始するをクリック" class="step-image">
+                    </div>
+
+                    <!-- ステップ10 -->
+                    <div class="step-item">
+                        <div class="step-header">
+                            <div class="step-number">10</div>
+                            <div class="step-icon">
+                                <i class="fas fa-rocket"></i>
+                            </div>
+                            <div class="step-text">
+                                <span class="title-highlight font-bold">「はじめに」</span>をクリックで学習スタート
+                            </div>
+                        </div>
+                        <div class="step-description">
+                            最後に「はじめに」をクリックして、実際の学習コンテンツを開始します。
+                        </div>
+                        <img src="10.「はじめに」をクリックで学習スタート.png" alt="はじめにをクリックで学習スタート" class="step-image">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ナビゲーションボタン -->
+        <div class="nav-buttons">
+            <a href="taikenban_dijest_1.html" class="nav-button prev">
+                <i class="fas fa-arrow-left"></i>
+                前へ
+            </a>
+        </div>
+    </div>
+</body>
+
+</html>

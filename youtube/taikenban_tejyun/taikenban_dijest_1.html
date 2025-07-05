@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>無料体験版登録手順</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
+  <style>
+    body,
+    html {
+      margin: 0;
+      padding: 0;
+      font-family: 'Noto Sans JP', sans-serif;
+      overflow: hidden;
+    }
+
+    @media (max-width: 768px) {
+
+      body,
+      html {
+        overflow: auto;
+      }
+    }
+
+    .slide-container {
+      width: 100vw;
+      height: 100vh;
+      position: relative;
+      background: linear-gradient(135deg, #0f1419 0%, #1a1e36 50%, #0f1419 100%);
+      color: #ffffff;
+      display: flex;
+      flex-direction: column;
+    }
+
+    @media (max-width: 768px) {
+      .slide-container {
+        min-height: 100vh;
+        height: auto;
+      }
+    }
+
+    .code-decoration {
+      position: absolute;
+      opacity: 0.08;
+      font-family: 'Courier New', monospace;
+      font-size: 1.5rem;
+      color: #64ffda;
+      z-index: 1;
+      text-shadow: 0 0 10px rgba(100, 255, 218, 0.3);
+    }
+
+    .code-top-right {
+      top: 40px;
+      right: 40px;
+    }
+
+    .code-bottom-left {
+      bottom: 40px;
+      left: 40px;
+    }
+
+    .title-highlight {
+      color: #64ffda;
+      font-weight: 900;
+      text-shadow: 0 0 20px rgba(100, 255, 218, 0.5);
+    }
+
+    .header-line {
+      width: 120px;
+      height: 8px;
+      background: linear-gradient(135deg, #64ffda 0%, #4fd1c7 100%);
+      margin: 15px 0;
+      border-radius: 5px;
+      box-shadow: 0 4px 15px rgba(100, 255, 218, 0.3);
+    }
+
+    .content-wrapper {
+      z-index: 2;
+      padding: 20px 30px;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    .main-title {
+      font-size: 1.8rem;
+      font-weight: 900;
+      margin-bottom: 8px;
+      text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    .nav-buttons {
+      position: fixed;
+      bottom: 40px;
+      right: 40px;
+      display: flex;
+      gap: 15px;
+      z-index: 10;
+    }
+
+    .nav-button {
+      background: linear-gradient(135deg, #64ffda 0%, #4fd1c7 100%);
+      color: #0f1419;
+      font-weight: bold;
+      font-size: 18px;
+      padding: 12px 20px;
+      border-radius: 25px;
+      text-decoration: none;
+      box-shadow: 0 6px 20px rgba(100, 255, 218, 0.3);
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .nav-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(100, 255, 218, 0.4);
+    }
+
+    .steps-container {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 15px;
+    }
+
+    .steps-row {
+      display: flex;
+      gap: 15px;
+      width: 100%;
+      max-width: 1600px;
+      justify-content: center;
+      align-items: stretch;
+    }
+
+    .step-item {
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.05) 100%);
+      border-radius: 16px;
+      border-left: 6px solid #64ffda;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+      backdrop-filter: blur(10px);
+      padding: 15px;
+      display: flex;
+      flex-direction: column;
+      width: 400px;
+      min-height: 270px;
+      justify-content: space-between;
+    }
+
+    .step-header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 12px;
+      flex-shrink: 0;
+    }
+
+    .step-number {
+      background: linear-gradient(135deg, #64ffda 0%, #4fd1c7 100%);
+      color: #0f1419;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 18px;
+      font-weight: bold;
+      margin-right: 10px;
+      box-shadow: 0 6px 20px rgba(100, 255, 218, 0.3);
+      flex-shrink: 0;
+    }
+
+    .step-icon {
+      background: linear-gradient(135deg, #64ffda 0%, #4fd1c7 100%);
+      color: #0f1419;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 14px;
+      margin-right: 8px;
+      flex-shrink: 0;
+      box-shadow: 0 6px 20px rgba(100, 255, 218, 0.3);
+    }
+
+    .step-text {
+      font-size: 14px;
+      color: #ffffff;
+      line-height: 1.3;
+      font-weight: 500;
+    }
+
+    .step-description {
+      font-size: 12px;
+      color: #b0b0b0;
+      line-height: 1.4;
+      margin-bottom: 12px;
+      flex: 1;
+    }
+
+    .step-image {
+      width: 100%;
+      height: 540px;
+      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+      border: 2px solid rgba(100, 255, 218, 0.2);
+      flex-shrink: 0;
+    }
+
+    .step-image.friend-add {
+      object-position: top center;
+    }
+
+    /* レスポンシブ対応 */
+    @media (max-width: 1400px) {
+      .steps-row {
+        gap: 12px;
+      }
+
+      .step-item {
+        width: 350px;
+        padding: 12px;
+      }
+
+      .step-image {
+        height: 470px;
+      }
+    }
+
+    @media (max-width: 1200px) {
+      .steps-row {
+        gap: 10px;
+      }
+
+      .step-item {
+        width: 300px;
+        padding: 10px;
+      }
+
+      .step-text {
+        font-size: 13px;
+      }
+
+      .step-description {
+        font-size: 11px;
+      }
+
+      .step-image {
+        height: 400px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .content-wrapper {
+        padding: 15px 15px;
+      }
+
+      .main-title {
+        font-size: 1.5rem;
+        margin-bottom: 5px;
+      }
+
+      .header-line {
+        width: 80px;
+        height: 5px;
+        margin: 8px 0;
+      }
+
+      .steps-container {
+        margin-top: 10px;
+      }
+
+      .steps-row {
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+      }
+
+      .step-item {
+        width: 100%;
+        max-width: 500px;
+        min-height: auto;
+        padding: 15px;
+      }
+
+      .step-text {
+        font-size: 16px;
+      }
+
+      .step-description {
+        font-size: 13px;
+      }
+
+      .step-image {
+        height: 500px;
+      }
+
+      .nav-buttons {
+        bottom: 20px;
+        right: 20px;
+      }
+
+      .nav-button {
+        font-size: 16px;
+        padding: 10px 16px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .content-wrapper {
+        padding: 10px 10px;
+      }
+
+      .main-title {
+        font-size: 1.3rem;
+      }
+
+      .step-item {
+        padding: 12px;
+      }
+
+      .step-number {
+        width: 35px;
+        height: 35px;
+        font-size: 16px;
+      }
+
+      .step-icon {
+        width: 25px;
+        height: 25px;
+        font-size: 12px;
+      }
+
+      .step-image {
+        height: 450px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="slide-container">
+    <!-- コード風装飾 -->
+    <div class="code-decoration code-top-right">
+      function register() {<br>
+      &nbsp;&nbsp;const steps = 5;<br>
+      &nbsp;&nbsp;return "success";<br>
+      }
+    </div>
+    <div class="code-decoration code-bottom-left">
+      &lt;div class="register"&gt;<br>
+      &nbsp;&nbsp;登録手順を確認<br>
+      &lt;/div&gt;
+    </div>
+    <div class="content-wrapper">
+      <h1 class="text-6xl font-black mb-2">無料体験版<span class="title-highlight">登録手順</span></h1>
+      <div class="header-line"></div>
+
+      <div class="steps-container">
+        <div class="steps-row">
+          <!-- ステップ1 -->
+          <div class="step-item">
+            <div class="step-header">
+              <div class="step-number">1</div>
+              <div class="step-icon">
+                <i class="fab fa-line"></i>
+              </div>
+              <div class="step-text">
+                動画概要欄で<span class="title-highlight font-bold">公式Line</span>に登録
+              </div>
+            </div>
+            <div class="step-description">
+              YouTube動画の概要欄にある公式Lineアカウントのリンクをクリックして、友達追加を行います。<br>
+              <a href="https://s.lmes.jp/landing-qr/1627543300-4PoDJorL?uLand=2jTFMb" target="_blank"
+                class="text-blue-400 hover:underline font-bold">公式Lineアカウントはこちら</a>
+            </div>
+            <img src="1_動画概要欄からLineに登録.png" alt="動画概要欄からLineに登録" class="step-image">
+          </div>
+
+          <!-- ステップ2 -->
+          <div class="step-item">
+            <div class="step-header">
+              <div class="step-number">2</div>
+              <div class="step-icon">
+                <i class="fas fa-user-plus"></i>
+              </div>
+              <div class="step-text">
+                Lineで<span class="title-highlight font-bold">友達追加</span>を完了
+              </div>
+            </div>
+            <div class="step-description">
+              Lineアプリで友達追加を完了させ、公式アカウントとつながります。
+            </div>
+            <img src="2.友達追加.jpg" alt="友達追加" class="step-image friend-add">
+          </div>
+
+          <!-- ステップ3 -->
+          <div class="step-item">
+            <div class="step-header">
+              <div class="step-number">3</div>
+              <div class="step-icon">
+                <i class="far fa-comment-dots"></i>
+              </div>
+              <div class="step-text">
+                Lineで<span class="title-highlight font-bold">「無料体験」</span>とメッセージ
+              </div>
+            </div>
+            <div class="step-description">
+              公式Lineアカウントに「無料体験」とメッセージを送信します。
+            </div>
+            <img src="3.Lineで「無料体験」とメッセージ.jpg" alt="Lineで無料体験とメッセージ" class="step-image">
+          </div>
+
+          <!-- ステップ4 -->
+          <div class="step-item">
+            <div class="step-header">
+              <div class="step-number">4</div>
+              <div class="step-icon">
+                <i class="fas fa-play-circle"></i>
+              </div>
+              <div class="step-text">
+                パネルの<span class="title-highlight font-bold">「体験をはじめる(無料)」</span>をクリック
+              </div>
+            </div>
+            <div class="step-description">
+              Lineで送られてきたパネルから「体験をはじめる(無料)」ボタンをクリックします。
+            </div>
+            <img src="4.パネルの体験を始めるをクリック.jpg" alt="パネルの体験を始めるをクリック" class="step-image">
+          </div>
+
+          <!-- ステップ5 -->
+          <div class="step-item">
+            <div class="step-header">
+              <div class="step-number">5</div>
+              <div class="step-icon">
+                <i class="fas fa-user-edit"></i>
+              </div>
+              <div class="step-text">
+                登録ページで<span class="title-highlight font-bold">名前・メールアドレス・パスワード</span>を登録
+              </div>
+            </div>
+            <div class="step-description">
+              表示された登録ページで、名前、メールアドレス、パスワードを入力してアカウントを作成します。
+            </div>
+            <img src="5.登録ページで名前_メールアドレス_パスワード登録.jpg" alt="登録ページで名前・メールアドレス・パスワード登録" class="step-image">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ナビゲーションボタン -->
+    <div class="nav-buttons">
+      <a href="taikenban_dijest_2.html" class="nav-button">
+        <i class="fas fa-arrow-right"></i>
+        次へ
+      </a>
+    </div>
+  </div>
+</body>
+
+</html>

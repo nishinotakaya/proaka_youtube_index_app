@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>動画解説 - チャレンジ開始から目標達成するまでの心の変化【ゼロからプログラミング習得するまで】</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      color: #333;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    header {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 30px;
+      margin-bottom: 30px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+      background: linear-gradient(45deg, #667eea, #764ba2);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .subtitle {
+      text-align: center;
+      color: #7f8c8d;
+      font-size: 1.1rem;
+      margin-bottom: 30px;
+    }
+
+    .back-link {
+      display: inline-block;
+      text-decoration: none;
+      color: #667eea;
+      font-weight: 600;
+      margin-bottom: 20px;
+      padding: 10px 20px;
+      border-radius: 25px;
+      background: rgba(255, 255, 255, 0.9);
+      transition: all 0.3s ease;
+    }
+
+    .back-link:hover {
+      background: rgba(255, 255, 255, 1);
+      transform: translateY(-2px);
+    }
+
+    .video-section {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 30px;
+      margin-bottom: 30px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    }
+
+    .video-container {
+      position: relative;
+      width: 100%;
+      max-width: 800px;
+      margin: 0 auto;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .video-container iframe {
+      width: 100%;
+      height: 450px;
+      border: none;
+    }
+
+    .content-section {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 30px;
+      margin-bottom: 30px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    }
+
+    .content-section h2 {
+      color: #2c3e50;
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      border-bottom: 3px solid #667eea;
+      padding-bottom: 10px;
+    }
+
+    .content-section h3 {
+      color: #2c3e50;
+      font-size: 1.4rem;
+      margin: 25px 0 15px 0;
+    }
+
+    .content-section p {
+      line-height: 1.8;
+      margin-bottom: 15px;
+      color: #555;
+    }
+
+    .highlights-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .highlight-item {
+      background: white;
+      border-radius: 15px;
+      padding: 25px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+      border: 2px solid #e0e0e0;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      width: 100%;
+    }
+
+    .highlight-item:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+      border-color: #667eea;
+    }
+
+    .highlight-icon {
+      font-size: 2.5rem;
+      flex-shrink: 0;
+      width: 80px;
+      height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(45deg, #667eea, #764ba2);
+      border-radius: 50%;
+      color: white;
+      box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+    }
+
+    .highlight-content {
+      flex: 1;
+    }
+
+    .highlight-content h3 {
+      color: #2c3e50;
+      font-size: 1.4rem;
+      margin-bottom: 8px;
+      font-weight: 600;
+    }
+
+    .highlight-content p {
+      color: #555;
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    .related-videos-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 25px;
+      margin-top: 30px;
+    }
+
+    .video-card {
+      background: white;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+      border: 1px solid #e0e0e0;
+    }
+
+    .video-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    }
+
+    .video-thumbnail {
+      width: 100%;
+      height: 200px;
+      background: #f0f0f0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .video-thumbnail iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .video-info {
+      padding: 20px;
+    }
+
+    .video-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #2c3e50;
+      margin-bottom: 10px;
+      line-height: 1.4;
+      text-decoration: none;
+      display: block;
+    }
+
+    .video-title:hover {
+      color: #667eea;
+    }
+
+    .video-author {
+      color: #7f8c8d;
+      font-size: 0.9rem;
+      margin-bottom: 15px;
+    }
+
+    .video-link {
+      display: inline-block;
+      background: linear-gradient(45deg, #667eea, #764ba2);
+      color: white;
+      padding: 8px 16px;
+      border-radius: 20px;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+
+    .video-link:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+    }
+
+    .author-badge {
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 15px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin-left: 10px;
+    }
+
+    .author-katou {
+      background: linear-gradient(45deg, #e74c3c, #c0392b);
+      color: white;
+    }
+
+    .author-komatsu {
+      background: linear-gradient(45deg, #3498db, #2980b9);
+      color: white;
+    }
+
+    .author-nishino {
+      background: linear-gradient(45deg, #9b59b6, #8e44ad);
+      color: white;
+    }
+
+    .qa-section {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 30px;
+      margin-bottom: 30px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    }
+
+    .qa-item {
+      margin-bottom: 25px;
+      padding: 20px;
+      background: rgba(102, 126, 234, 0.1);
+      border-radius: 15px;
+      border-left: 4px solid #667eea;
+    }
+
+    .qa-question {
+      font-weight: 600;
+      color: #2c3e50;
+      margin-bottom: 10px;
+    }
+
+    .qa-answer {
+      color: #555;
+      line-height: 1.6;
+    }
+
+    .author-info {
+      background: linear-gradient(45deg, #3498db, #2980b9);
+      color: white;
+      padding: 20px;
+      border-radius: 15px;
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    .author-badge {
+      display: inline-block;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      background: rgba(255, 255, 255, 0.2);
+      margin-left: 10px;
+    }
+
+    @media (max-width: 768px) {
+      .video-container iframe {
+        height: 250px;
+      }
+
+      h1 {
+        font-size: 2rem;
+      }
+
+      .content-section h2 {
+        font-size: 1.5rem;
+      }
+
+      .highlight-item {
+        padding: 20px;
+        gap: 15px;
+      }
+
+      .highlight-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 2rem;
+      }
+
+      .highlight-content h3 {
+        font-size: 1.2rem;
+      }
+
+      .related-videos-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <a href="../../top.html" class="back-link">← トップページに戻る</a>
+      <h1>🎬 動画解説</h1>
+      <p class="subtitle">チャレンジ開始から目標達成するまでの心の変化【ゼロからプログラミング習得するまで】</p>
+    </header>
+
+    <div class="video-section">
+      <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/mqCgEhs28MQ?si=JNWhsb2e8xrIJ2Wg" title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+    </div>
+
+    <div class="content-section">
+      <h2>📝 動画の概要</h2>
+      <p>
+        この動画では、ゼロからプログラミングを習得する過程での心の変化について、具体的な体験を通じて紹介されています。最初は軽い気持ちで始めたが、途中で挫折しそうになり、自分に才能がないと思ったり、他の道を選んだほうが良いのではないかと迷う瞬間が訪れます。しかし、最終的に成功したいという強い意志を持ち続けることが、目標達成のための鍵だと語られています。
+      </p>
+      <p>
+        プログラミングや他の挑戦的な目標において、初心者が直面する心の変化についても詳しく述べられています。最初は軽い気持ちで始めるものの、途中で壁にぶつかり、自分の能力を疑う時期が訪れることが多いです。この時期にどれだけ諦めずに続けるかが成功への鍵であり、最終的には自分の選んだ道を信じ、継続することで目標達成が可能になると説明しています。
+      </p>
+    </div>
+
+    <div class="content-section">
+      <h2>🌟 重要なポイント</h2>
+      <div class="highlights-grid">
+        <div class="highlight-item">
+          <div class="highlight-icon">💭</div>
+          <div class="highlight-content">
+            <h3>挫折の壁</h3>
+            <p>最初は軽い気持ちで始めても、途中で焦りや不安が訪れる。プログラミングのようなスキル習得では、エラーや難しさに直面し、進まないことに悩む。</p>
+          </div>
+        </div>
+
+        <div class="highlight-item">
+          <div class="highlight-icon">💪</div>
+          <div class="highlight-content">
+            <h3>心の変化</h3>
+            <p>初めは興味本位で始めても、進まない壁にぶつかると自分の才能を疑い、やめたくなる。そこで「本当に成功したいのか？」と自問自答が始まり、強い決意を持つことが必要。</p>
+          </div>
+        </div>
+
+        <div class="highlight-item">
+          <div class="highlight-icon">🔄</div>
+          <div class="highlight-content">
+            <h3>継続の重要性</h3>
+            <p>諦めずに続けることで、自分の選んだ道が正しいことを再確認し、再度決意を新たにして前進する。成功への道は努力を続けることで開ける。</p>
+          </div>
+        </div>
+
+        <div class="highlight-item">
+          <div class="highlight-icon">🧠</div>
+          <div class="highlight-content">
+            <h3>メンタルの強さ</h3>
+            <p>成果が見えない時期でも、「本当にやりたいか？」という問いかけで自分の本当の気持ちを確認し、諦めずに続ける心の強さが必要。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section">
+      <h2>🔑 キーワード</h2>
+      <ul style="list-style: none; padding: 0;">
+        <li
+          style="margin-bottom: 10px; padding: 10px; background: rgba(102, 126, 234, 0.1); border-radius: 10px; display: inline-block; margin-right: 10px;">
+          プログラミング習得</li>
+        <li
+          style="margin-bottom: 10px; padding: 10px; background: rgba(102, 126, 234, 0.1); border-radius: 10px; display: inline-block; margin-right: 10px;">
+          挫折</li>
+        <li
+          style="margin-bottom: 10px; padding: 10px; background: rgba(102, 126, 234, 0.1); border-radius: 10px; display: inline-block; margin-right: 10px;">
+          継続の力</li>
+      </ul>
+    </div>
+
+    <div class="qa-section">
+      <h2>❓ よくある質問</h2>
+
+      <div class="qa-item">
+        <div class="qa-question">Q: プログラミング学習で挫折しやすい瞬間はいつですか？</div>
+        <div class="qa-answer">A:
+          プログラミング学習を始めてうまくいかないと感じ、エラーが続くことで焦りや不安が生まれます。この時期に自分の才能に疑問を持ち、「プログラミングは向いていない」と感じて挫折しやすいです。</div>
+      </div>
+
+      <div class="qa-item">
+        <div class="qa-question">Q: プログラミングを続けるためにはどうすれば良いですか？</div>
+        <div class="qa-answer">A: 最初は軽い気持ちで始めても、心の中で「絶対にやり切る」と決めた瞬間に本気で取り組むことが重要です。挫折しそうな時でも、自分の目標を再確認し、続ける覚悟を持つことが必要です。
+        </div>
+      </div>
+
+      <div class="qa-item">
+        <div class="qa-question">Q: 目標に向かって進むために必要な心の変化は何ですか？</div>
+        <div class="qa-answer">A:
+          目標に向かって進むためには、最初の挑戦でうまくいかない壁にぶつかることが多いですが、その後、自問自答を行い、「本当にこれをやりたいのか？」と自分を見つめ直し、覚悟を新たにすることで前進できます。</div>
+      </div>
+
+      <div class="qa-item">
+        <div class="qa-question">Q: プログラミングを学ぶ上で挫折を避ける方法は？</div>
+        <div class="qa-answer">A: 挫折を避けるためには、最初から全力で取り組むことが重要ですが、途中で壁にぶつかったときに自分の目標を再確認し、「続ける理由」をしっかりと自分に問いかけることが効果的です。
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section">
+      <h2>🎬 関連動画</h2>
+      <div class="related-videos-grid">
+        <div class="video-card">
+          <div class="video-thumbnail">
+            <iframe src="https://www.youtube.com/embed/ief17KqCDQs?si=QFx9eeSepUTTyFOO" title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+          <div class="video-info">
+            <a href="youtube/komatsu/kousyounyuu_teisyuunyuu_programing.html" class="video-title">
+              プログラミング習得者の高収入と低収入の違い5選
+            </a>
+            <div class="video-author">
+              講師: 小松先生 <span class="author-badge author-komatsu">小松</span>
+            </div>
+            <a href="youtube/komatsu/kousyounyuu_teisyuunyuu_programing.html" class="video-link">詳細を見る</a>
+          </div>
+        </div>
+
+        <div class="video-card">
+          <div class="video-thumbnail">
+            <iframe src="https://www.youtube.com/embed/Tl4YioK1ljo?si=QleoDXYlNVmROKwG" title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+          <div class="video-info">
+            <a href="youtube/katou/90_zasetsu_proguraming_muitenai_hito.html" class="video-title">
+              【警告】90％挫折！？プログラミングに向いていない人の特徴5選
+            </a>
+            <div class="video-author">
+              講師: 加藤先生 <span class="author-badge author-katou">加藤</span>
+            </div>
+            <a href="youtube/katou/90_zasetsu_proguraming_muitenai_hito.html" class="video-link">詳細を見る</a>
+          </div>
+        </div>
+
+        <div class="video-card">
+          <div class="video-thumbnail">
+            <iframe src="https://www.youtube.com/embed/FfivKeebTBI?si=pnfHqc_U-6MYQyx2" title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+          <div class="video-info">
+            <a href="youtube/nishino/tensyoku_programing.html" class="video-title">
+              転職したいならプログラミングをやれ！【元介護士の現役エンジニア西野が語る】
+            </a>
+            <div class="video-author">
+              講師: 西野先生 <span class="author-badge author-nishino">西野</span>
+            </div>
+            <a href="youtube/nishino/tensyoku_programing.html" class="video-link">詳細を見る</a>
+          </div>
+        </div>
+
+        <div class="video-card">
+          <div class="video-thumbnail">
+            <iframe src="https://www.youtube.com/embed/iKiqL-Kur4o?si=2dKovTEG0YPiHWiD" title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+          <div class="video-info">
+            <a href="youtube/komatsu/2025_programing_load_map.html" class="video-title">
+              【2025年最新版】プログラミング未経験からAI活用で最短最速でプログラマになるロードマップ
+            </a>
+            <div class="video-author">
+              講師: 小松先生 <span class="author-badge author-komatsu">小松</span>
+            </div>
+            <a href="youtube/komatsu/2025_programing_load_map.html" class="video-link">詳細を見る</a>
+          </div>
+        </div>
+
+        <div class="video-card">
+          <div class="video-thumbnail">
+            <iframe src="https://www.youtube.com/embed/jCosZGP2mGY?si=Z9cY0PKznlhEPFH9" title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+          <div class="video-info">
+            <a href="youtube/katou/tyusotsu_programing.html" class="video-title">
+              【学歴・経歴不問】中卒からエンジニアになるプログラミング学習法
+            </a>
+            <div class="video-author">
+              講師: 加藤先生 <span class="author-badge author-katou">加藤</span>
+            </div>
+            <a href="youtube/katou/tyusotsu_programing.html" class="video-link">詳細を見る</a>
+          </div>
+        </div>
+
+        <div class="video-card">
+          <div class="video-thumbnail">
+            <iframe src="https://www.youtube.com/embed/jbHSqwi09Os?si=jaqKAQQiqJWIi1o6" title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+          <div class="video-info">
+            <a href="youtube/komatsu/syosinsya_dokugaku_tensyoku_programing.html" class="video-title">
+              初心者から完全無料でプログラミングを独学して転職するまでのロードマップ
+            </a>
+            <div class="video-author">
+              講師: 小松先生 <span class="author-badge author-komatsu">小松</span>
+            </div>
+            <a href="youtube/komatsu/syosinsya_dokugaku_tensyoku_programing.html" class="video-link">詳細を見る</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="author-info">
+      <h3>講師: 小松先生 <span class="author-badge">小松</span></h3>
+      <p>現役エンジニアとして活躍しながら、プログラミング学習者のサポートを行っています。</p>
+    </div>
+  </div>
+</body>
+
+</html>
